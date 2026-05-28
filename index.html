@@ -26,6 +26,7 @@
       --teal-dark: #0f766e;
       --blue: #38bdf8;
       --green-soft: #dffcf7;
+      --red-soft: #fee2e2;
       --shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
       --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.07);
       --radius: 28px;
@@ -114,6 +115,30 @@
       font-weight: 800;
     }
 
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 880px;
+      margin-bottom: 24px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 0.94;
+      letter-spacing: -0.078em;
+      font-weight: 900;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.07em;
+    }
+
+    h3 {
+      letter-spacing: -0.05em;
+    }
+
     .hero {
       position: relative;
       padding: 150px 0 92px;
@@ -164,36 +189,26 @@
       box-shadow: 0 0 20px rgba(41,230,197,0.8);
     }
 
-    h1, h2, h3, p {
-      margin-top: 0;
-    }
-
-    h1 {
-      max-width: 840px;
-      margin-bottom: 24px;
-      font-size: clamp(43px, 7vw, 76px);
-      line-height: 0.94;
-      letter-spacing: -0.078em;
-      font-weight: 900;
-    }
-
-    h2 {
-      margin-bottom: 0;
-      font-size: clamp(34px, 4vw, 54px);
-      line-height: 1;
-      letter-spacing: -0.07em;
-    }
-
-    h3 {
-      letter-spacing: -0.05em;
-    }
-
     .hero-text {
-      max-width: 680px;
+      max-width: 700px;
       margin-bottom: 18px;
       font-size: clamp(18px, 2vw, 21px);
       color: rgba(255,255,255,0.76);
       letter-spacing: -0.02em;
+    }
+
+    .hero-result {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(41,230,197,0.11);
+      border: 1px solid rgba(41,230,197,0.22);
+      color: rgba(255,255,255,0.88);
+      font-size: 14px;
+      font-weight: 800;
     }
 
     .hero-actions {
@@ -326,7 +341,7 @@
     }
 
     .before .ba-icon {
-      background: #fee2e2;
+      background: var(--red-soft);
       color: #b91c1c;
     }
 
@@ -368,7 +383,7 @@
       position: absolute;
       right: -18px;
       bottom: 34px;
-      max-width: 220px;
+      max-width: 230px;
       padding: 14px 16px;
       border-radius: 18px;
       background: var(--white);
@@ -428,9 +443,31 @@
       flex: 0 0 auto;
     }
 
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      background: var(--ink);
+      color: var(--teal);
+    }
+
+    .card-icon.light {
+      background: var(--green-soft);
+      color: var(--teal-dark);
+    }
+
     .cards-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .cards-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
@@ -465,24 +502,70 @@
       font-size: 15px;
     }
 
-    .card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 22px;
-      background: var(--ink);
-      color: var(--teal);
+    .task-strip {
+      position: relative;
+      z-index: 3;
+      margin-top: -32px;
+      padding: 0 0 58px;
     }
 
-    .card-icon.light {
-      background: var(--green-soft);
+    .task-panel {
+      padding: 26px;
+      border-radius: 30px;
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow);
+    }
+
+    .task-panel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .task-panel h2 {
+      font-size: clamp(28px, 3vw, 38px);
+      letter-spacing: -0.06em;
+    }
+
+    .task-panel p {
+      color: var(--muted);
+      margin-bottom: 0;
+      max-width: 520px;
+    }
+
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .task-card {
+      padding: 16px;
+      border-radius: 20px;
+      background: var(--off);
+      border: 1px solid #e2e8f0;
+      min-height: 132px;
+    }
+
+    .task-card svg {
+      margin-bottom: 12px;
       color: var(--teal-dark);
+    }
+
+    .task-card strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #0f172a;
     }
 
     .problem {
       background: var(--off);
+      padding-top: 42px;
     }
 
     .problem-grid {
@@ -610,8 +693,72 @@
       background: var(--off);
     }
 
-    .examples {
+    .receipt {
       background: var(--white);
+    }
+
+    .receipt-card {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 36px;
+      background: var(--off);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow);
+    }
+
+    .receipt-visual {
+      padding: 24px;
+      border-radius: 28px;
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+    }
+
+    .receipt-label {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      margin-bottom: 16px;
+    }
+
+    .receipt-lines {
+      display: grid;
+      gap: 12px;
+    }
+
+    .receipt-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .receipt-line:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .receipt-line span {
+      color: var(--teal-dark);
+      font-weight: 900;
+    }
+
+    .receipt-content p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .examples {
+      background: var(--off);
     }
 
     .example-card {
@@ -628,6 +775,66 @@
       height: 92px;
       border-radius: 999px;
       background: rgba(41,230,197,0.12);
+    }
+
+    .story {
+      background: var(--white);
+    }
+
+    .story-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: center;
+      padding: 38px;
+      border-radius: 36px;
+      background:
+        radial-gradient(circle at 8% 15%, rgba(41,230,197,0.13), transparent 28%),
+        linear-gradient(135deg, #07111f, #0d1b2d);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .story-card p {
+      color: rgba(255,255,255,0.68);
+      font-size: 17px;
+    }
+
+    .story-visual {
+      display: grid;
+      gap: 12px;
+    }
+
+    .manual-row {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .manual-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      background: rgba(41,230,197,0.14);
+      color: var(--teal);
+    }
+
+    .manual-row strong {
+      display: block;
+      font-size: 16px;
+      color: var(--white);
+    }
+
+    .manual-row span {
+      color: rgba(255,255,255,0.63);
+      font-size: 14px;
     }
 
     .flow {
@@ -947,6 +1154,16 @@
       flex-wrap: wrap;
     }
 
+    @media (max-width: 1080px) {
+      .task-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .cards-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 980px) {
       .nav-links {
         display: none;
@@ -959,6 +1176,8 @@
       .hero-grid,
       .problem-grid,
       .promise-panel,
+      .receipt-card,
+      .story-card,
       .flow-grid,
       .instructor-card,
       .faq-grid {
@@ -1026,8 +1245,18 @@
         min-height: auto;
       }
 
+      .task-panel-top {
+        display: block;
+      }
+
+      .task-panel p {
+        margin-top: 12px;
+      }
+
+      .task-grid,
       .value-strip,
       .cards-3,
+      .cards-4,
       .cards-6,
       .who-grid,
       .details-grid,
@@ -1036,8 +1265,10 @@
       }
 
       .quote-card,
+      .story-card,
       .instructor-card,
-      .promise-panel {
+      .promise-panel,
+      .receipt-card {
         padding: 24px;
       }
 
@@ -1121,6 +1352,14 @@
       <circle cx="12" cy="12" r="5"></circle>
       <circle cx="12" cy="12" r="1"></circle>
     </symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24">
+      <path d="M8 6h13"></path>
+      <path d="M8 12h13"></path>
+      <path d="M8 18h13"></path>
+      <path d="M3 6h.01"></path>
+      <path d="M3 12h.01"></path>
+      <path d="M3 18h.01"></path>
+    </symbol>
   </svg>
 
   <div class="page">
@@ -1134,7 +1373,8 @@
 
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="#outcomes">What changes</a>
-          <a href="#examples">Examples</a>
+          <a href="#tasks">Bring a task</a>
+          <a href="#story">Example</a>
           <a href="#flow">How it works</a>
           <a href="#instructor">Karsten</a>
           <a href="#register" class="nav-cta">Save my seat</a>
@@ -1152,15 +1392,20 @@
               Practical AI workshop for busy business owners
             </div>
 
-            <h1>Get back hours from the admin work slowing your business down.</h1>
+            <h1>Get back hours from the repeated tasks and bottlenecks slowing your business down.</h1>
 
             <p class="hero-text">
-              Bring one recurring task, bottleneck, or business headache. Leave with a practical AI-assisted process that helps you handle it faster, cleaner, and with less mental load.
+              Bring one recurring business headache. Leave with a practical AI-assisted process that helps you handle it faster, cleaner, and with less mental load.
             </p>
 
             <p class="hero-text">
               This is for owners who do not need more AI hype. You need a way to use AI inside the real work of your business.
             </p>
+
+            <div class="hero-result">
+              <svg class="mini-check" aria-hidden="true"><use href="#icon-check"></use></svg>
+              Walk away with one task clarified and one workflow started.
+            </div>
 
             <div class="hero-actions">
               <a href="#register" class="button button-primary">
@@ -1248,6 +1493,49 @@
               <div class="floating-chip">
                 Start where the pain already is.
                 <span>The best AI use case is usually hiding in your daily bottlenecks.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="task-strip" id="tasks">
+        <div class="container">
+          <div class="task-panel">
+            <div class="task-panel-top">
+              <div>
+                <div class="section-kicker">Bring a task like this</div>
+                <h2>Start with work you already want off your plate.</h2>
+              </div>
+              <p>
+                You do not need a perfect AI idea. Bring the thing that keeps stealing time, attention, or energy.
+              </p>
+            </div>
+
+            <div class="task-grid">
+              <div class="task-card">
+                <svg class="icon-svg" aria-hidden="true"><use href="#icon-chat"></use></svg>
+                <strong>The customer follow-up you keep rewriting</strong>
+              </div>
+
+              <div class="task-card">
+                <svg class="icon-svg" aria-hidden="true"><use href="#icon-users"></use></svg>
+                <strong>The staff questions you answer over and over</strong>
+              </div>
+
+              <div class="task-card">
+                <svg class="icon-svg" aria-hidden="true"><use href="#icon-flow"></use></svg>
+                <strong>The process nobody follows consistently</strong>
+              </div>
+
+              <div class="task-card">
+                <svg class="icon-svg" aria-hidden="true"><use href="#icon-search"></use></svg>
+                <strong>The research task you keep avoiding</strong>
+              </div>
+
+              <div class="task-card">
+                <svg class="icon-svg" aria-hidden="true"><use href="#icon-doc"></use></svg>
+                <strong>The document nobody wants to dig through</strong>
               </div>
             </div>
           </div>
@@ -1407,6 +1695,42 @@
         </div>
       </section>
 
+      <section class="receipt">
+        <div class="container">
+          <div class="receipt-card">
+            <div class="receipt-content">
+              <div class="section-kicker">What you leave with</div>
+              <h2>A simple first version, not another pile of ideas.</h2>
+              <p>
+                The win is not that you heard about AI. The win is that one real task in your business is clearer than when you walked in.
+              </p>
+            </div>
+
+            <div class="receipt-visual">
+              <div class="receipt-label">Workshop output</div>
+              <div class="receipt-lines">
+                <div class="receipt-line">
+                  One task clarified
+                  <span>Included</span>
+                </div>
+                <div class="receipt-line">
+                  One workflow started
+                  <span>Included</span>
+                </div>
+                <div class="receipt-line">
+                  One AI use case understood
+                  <span>Included</span>
+                </div>
+                <div class="receipt-line">
+                  One next step for your business
+                  <span>Included</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="examples" id="examples">
         <div class="container">
           <div class="section-header">
@@ -1460,10 +1784,62 @@
 
             <div class="card example-card">
               <div class="card-icon light">
-                <svg class="icon-svg" aria-hidden="true"><use href="#icon-flow"></use></svg>
+                <svg class="icon-svg" aria-hidden="true"><use href="#icon-list"></use></svg>
               </div>
               <h3>Repetitive admin</h3>
               <p>Turn repeated tasks into checklists, templates, summaries, or step-by-step processes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="story" id="story">
+        <div class="container">
+          <div class="story-card">
+            <div>
+              <div class="section-kicker">A normal example</div>
+              <h2>Old manuals become usable answers.</h2>
+              <p>
+                Imagine your business has old equipment manuals, process docs, policies, or training notes that nobody wants to dig through.
+              </p>
+              <p>
+                Instead of hunting through pages, AI can help turn that information into a usable guide. You can ask what to check, where to look, what step comes next, and what part of the document matters.
+              </p>
+              <p>
+                That is the kind of practical win this workshop is built around.
+              </p>
+            </div>
+
+            <div class="story-visual">
+              <div class="manual-row">
+                <div class="manual-icon">
+                  <svg class="icon-svg" aria-hidden="true"><use href="#icon-doc"></use></svg>
+                </div>
+                <div>
+                  <strong>Before</strong>
+                  <span>Important knowledge is trapped in manuals, notes, and memory.</span>
+                </div>
+              </div>
+
+              <div class="manual-row">
+                <div class="manual-icon">
+                  <svg class="icon-svg" aria-hidden="true"><use href="#icon-search"></use></svg>
+                </div>
+                <div>
+                  <strong>During</strong>
+                  <span>AI helps organize the information and surface what matters.</span>
+                </div>
+              </div>
+
+              <div class="manual-row">
+                <div class="manual-icon">
+                  <svg class="icon-svg" aria-hidden="true"><use href="#icon-tools"></use></svg>
+                </div>
+                <div>
+                  <strong>After</strong>
+                  <span>Your team gets clearer answers and better next steps.</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
