@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>AI Workshop for Business Owners</title>
-  <meta name="description" content="Bring one annoying business task and leave with a smarter way to handle it. A practical AI workshop for business owners who feel behind, overwhelmed, or unsure where to start." />
+  <meta name="description" content="Bring one annoying business task and leave with an AI workflow you can use this week. A practical workshop for business owners who feel behind on AI and want a simple place to start." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,17 +13,16 @@
 
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0d1b2d;
+      --navy: #07111f;
+      --navy-2: #0d1b2d;
       --ink: #0d1726;
       --muted: #64748b;
       --white: #ffffff;
-      --off-white: #f8fafc;
+      --off: #f8fafc;
       --line: #dbe3ef;
-      --accent: #29e6c5;
-      --accent-dark: #0f766e;
+      --teal: #29e6c5;
+      --teal-dark: #0f766e;
       --blue: #38bdf8;
-      --soft-teal: #dffcf7;
       --shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
       --radius: 28px;
     }
@@ -40,7 +39,7 @@
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
-      background: var(--off-white);
+      background: var(--off);
       line-height: 1.5;
     }
 
@@ -60,18 +59,16 @@
 
     .nav {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
+      inset: 0 0 auto;
+      z-index: 10;
       padding: 24px 0;
       color: var(--white);
     }
 
     .nav-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 24px;
     }
 
@@ -79,25 +76,25 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      font-size: 18px;
       font-weight: 900;
       letter-spacing: -0.04em;
-      font-size: 18px;
     }
 
     .brand-mark {
       width: 34px;
       height: 34px;
       border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--blue));
+      background: linear-gradient(135deg, var(--teal), var(--blue));
       box-shadow: 0 0 40px rgba(41, 230, 197, 0.45);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 24px;
       font-size: 14px;
-      color: rgba(255,255,255,0.76);
+      color: rgba(255,255,255,0.74);
     }
 
     .nav-links a:hover {
@@ -118,8 +115,8 @@
       padding: 150px 0 92px;
       color: var(--white);
       background:
-        radial-gradient(circle at 15% 20%, rgba(41,230,197,0.24), transparent 30%),
-        radial-gradient(circle at 90% 10%, rgba(56,189,248,0.18), transparent 28%),
+        radial-gradient(circle at 16% 20%, rgba(41,230,197,0.24), transparent 30%),
+        radial-gradient(circle at 88% 12%, rgba(56,189,248,0.18), transparent 28%),
         linear-gradient(135deg, #07111f 0%, #08182d 54%, #0f172a 100%);
     }
 
@@ -127,8 +124,8 @@
       content: "";
       position: absolute;
       inset: auto 0 0;
-      height: 160px;
-      background: linear-gradient(to bottom, transparent, rgba(248,250,252,1));
+      height: 140px;
+      background: linear-gradient(to bottom, transparent, var(--off));
       pointer-events: none;
     }
 
@@ -136,7 +133,7 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: 1.03fr 0.97fr;
+      grid-template-columns: 1.04fr 0.96fr;
       gap: 56px;
       align-items: center;
     }
@@ -159,13 +156,17 @@
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      background: var(--accent);
+      background: var(--teal);
       box-shadow: 0 0 20px rgba(41,230,197,0.8);
     }
 
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
     h1 {
-      margin: 0;
-      max-width: 820px;
+      max-width: 840px;
+      margin-bottom: 24px;
       font-size: clamp(44px, 7vw, 76px);
       line-height: 0.94;
       letter-spacing: -0.078em;
@@ -173,8 +174,8 @@
     }
 
     .hero-text {
-      margin: 26px 0 0;
       max-width: 660px;
+      margin-bottom: 18px;
       font-size: clamp(18px, 2vw, 21px);
       color: rgba(255,255,255,0.76);
       letter-spacing: -0.02em;
@@ -185,7 +186,7 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 14px;
-      margin-top: 34px;
+      margin-top: 32px;
     }
 
     .button {
@@ -197,7 +198,7 @@
       border-radius: 999px;
       font-weight: 900;
       letter-spacing: -0.02em;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
     .button:hover {
@@ -206,7 +207,7 @@
 
     .button-primary {
       color: #06201d;
-      background: var(--accent);
+      background: var(--teal);
       box-shadow: 0 18px 50px rgba(41, 230, 197, 0.26);
     }
 
@@ -217,13 +218,10 @@
     }
 
     .hero-proof {
-      margin-top: 22px;
+      margin-top: 20px;
+      margin-bottom: 0;
       color: rgba(255,255,255,0.62);
       font-size: 14px;
-    }
-
-    .hero-visual {
-      position: relative;
     }
 
     .workshop-card {
@@ -239,17 +237,17 @@
     .mock-window {
       overflow: hidden;
       border-radius: 24px;
-      background: #f8fafc;
+      background: var(--off);
       color: var(--ink);
       box-shadow: 0 24px 60px rgba(0,0,0,0.22);
     }
 
     .mock-top {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 14px 16px;
-      background: #ffffff;
+      background: var(--white);
       border-bottom: 1px solid #e2e8f0;
     }
 
@@ -275,58 +273,57 @@
       padding: 22px;
     }
 
-    .workflow-label {
+    .label {
+      color: var(--teal-dark);
       font-size: 12px;
-      text-transform: uppercase;
       font-weight: 900;
       letter-spacing: 0.12em;
-      color: var(--accent-dark);
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
     .workflow-title {
-      margin: 0 0 18px;
+      margin-bottom: 18px;
       font-size: 25px;
       line-height: 1.06;
       letter-spacing: -0.055em;
     }
 
-    .workflow-steps {
+    .steps {
       display: grid;
       gap: 12px;
     }
 
-    .step-card {
+    .step {
       display: grid;
       grid-template-columns: 34px 1fr;
       gap: 12px;
       padding: 15px;
       border: 1px solid #e2e8f0;
       border-radius: 18px;
-      background: #ffffff;
+      background: var(--white);
     }
 
     .step-number {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      place-items: center;
       width: 34px;
       height: 34px;
       border-radius: 12px;
       color: #06201d;
-      background: var(--accent);
+      background: var(--teal);
       font-weight: 900;
       font-size: 13px;
     }
 
-    .step-card strong {
+    .step strong {
       display: block;
       font-size: 14px;
       letter-spacing: -0.02em;
       margin-bottom: 3px;
     }
 
-    .step-card span {
+    .step span {
       display: block;
       font-size: 13px;
       color: var(--muted);
@@ -339,7 +336,7 @@
       max-width: 220px;
       padding: 14px 16px;
       border-radius: 18px;
-      background: #ffffff;
+      background: var(--white);
       color: var(--ink);
       box-shadow: var(--shadow);
       font-size: 13px;
@@ -354,42 +351,17 @@
       font-weight: 500;
     }
 
-    .pills {
-      padding: 34px 0 14px;
-      background: var(--off-white);
-    }
-
-    .pills-inner {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      color: #64748b;
-      font-size: 14px;
-      text-align: center;
-    }
-
-    .mini-pill {
-      padding: 9px 14px;
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      font-weight: 800;
-      color: #334155;
-    }
-
     section {
-      padding: 92px 0;
+      padding: 78px 0;
     }
 
     .section-header {
       max-width: 760px;
-      margin-bottom: 42px;
+      margin-bottom: 36px;
     }
 
     .section-kicker {
-      color: var(--accent-dark);
+      color: var(--teal-dark);
       font-weight: 900;
       font-size: 13px;
       letter-spacing: 0.12em;
@@ -398,21 +370,75 @@
     }
 
     h2 {
-      margin: 0;
+      margin-bottom: 0;
       font-size: clamp(34px, 4vw, 54px);
       line-height: 1;
       letter-spacing: -0.07em;
     }
 
     .section-copy {
-      margin-top: 18px;
+      max-width: 700px;
+      margin: 18px 0 0;
       font-size: 18px;
       color: var(--muted);
-      max-width: 700px;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 28px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.05);
+    }
+
+    .card.soft {
+      background: var(--off);
+      box-shadow: none;
+    }
+
+    .card.dark {
+      background: var(--ink);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card.dark p {
+      color: rgba(255,255,255,0.66);
+    }
+
+    .icon {
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: var(--ink);
+      color: var(--teal);
+      font-weight: 900;
+      margin-bottom: 22px;
     }
 
     .problem {
-      background: var(--off-white);
+      background: var(--off);
     }
 
     .problem-grid {
@@ -431,7 +457,7 @@
     }
 
     .quote-card p {
-      margin: 0;
+      margin-bottom: 18px;
       font-size: clamp(25px, 3vw, 39px);
       line-height: 1.05;
       letter-spacing: -0.06em;
@@ -439,8 +465,6 @@
     }
 
     .quote-card span {
-      display: block;
-      margin-top: 20px;
       color: rgba(255,255,255,0.62);
       font-size: 15px;
     }
@@ -456,19 +480,18 @@
       gap: 14px;
       padding: 20px;
       border-radius: 22px;
-      background: #ffffff;
+      background: var(--white);
       border: 1px solid #e2e8f0;
     }
 
     .check {
+      display: grid;
+      place-items: center;
       width: 38px;
       height: 38px;
       border-radius: 14px;
-      background: var(--soft-teal);
-      color: var(--accent-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #dffcf7;
+      color: var(--teal-dark);
       font-weight: 900;
     }
 
@@ -480,90 +503,40 @@
     }
 
     .problem-item span {
+      display: block;
       color: var(--muted);
       font-size: 15px;
     }
 
     .promise {
-      background: #ffffff;
+      background: var(--white);
+      padding-top: 64px;
+      padding-bottom: 64px;
     }
 
-    .split-grid {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 34px;
-      align-items: start;
+    .promise-panel {
+      padding: 38px;
+      border-radius: 36px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(41,230,197,0.18), transparent 34%),
+        var(--ink);
+      color: var(--white);
+      box-shadow: var(--shadow);
     }
 
-    .big-copy {
-      font-size: 22px;
-      line-height: 1.35;
-      letter-spacing: -0.035em;
-      color: #334155;
-      margin: 0;
+    .promise-panel h2 {
+      max-width: 820px;
     }
 
-    .simple-card {
-      padding: 28px;
-      border-radius: var(--radius);
-      background: var(--off-white);
-      border: 1px solid #e2e8f0;
-    }
-
-    .simple-card h3 {
-      margin: 0 0 12px;
-      font-size: 26px;
-      line-height: 1.06;
-      letter-spacing: -0.055em;
-    }
-
-    .simple-card p {
-      margin: 0;
-      color: var(--muted);
+    .promise-panel p {
+      max-width: 760px;
+      margin: 20px 0 0;
+      color: rgba(255,255,255,0.68);
+      font-size: 18px;
     }
 
     .outcomes {
-      background: #ffffff;
-    }
-
-    .outcome-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .outcome-card {
-      padding: 28px;
-      border-radius: var(--radius);
-      background: var(--off-white);
-      border: 1px solid #e2e8f0;
-      min-height: 270px;
-    }
-
-    .card-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 16px;
-      background: var(--ink);
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      margin-bottom: 22px;
-    }
-
-    .outcome-card h3 {
-      margin: 0;
-      font-size: 23px;
-      line-height: 1.08;
-      letter-spacing: -0.05em;
-    }
-
-    .outcome-card p {
-      margin: 14px 0 0;
-      color: var(--muted);
-      font-size: 15px;
+      background: var(--off);
     }
 
     .prompts {
@@ -579,7 +552,7 @@
 
     .prompt-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
     }
 
@@ -588,13 +561,13 @@
       border-radius: 22px;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.13);
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.82);
       font-size: 16px;
     }
 
     .prompt-card strong {
       display: block;
-      color: var(--accent);
+      color: var(--teal);
       margin-bottom: 8px;
       font-size: 13px;
       text-transform: uppercase;
@@ -602,63 +575,11 @@
     }
 
     .examples {
-      background: var(--off-white);
-    }
-
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .example-card {
-      padding: 26px;
-      border-radius: var(--radius);
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
-    }
-
-    .example-card h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-      line-height: 1.1;
-      letter-spacing: -0.05em;
-    }
-
-    .example-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .mindset {
-      background: #ffffff;
-    }
-
-    .mindset-panel {
-      padding: 44px;
-      border-radius: 36px;
-      background:
-        radial-gradient(circle at 90% 10%, rgba(41,230,197,0.18), transparent 34%),
-        var(--ink);
-      color: var(--white);
-      box-shadow: var(--shadow);
-    }
-
-    .mindset-panel h2 {
-      max-width: 820px;
-    }
-
-    .mindset-panel p {
-      max-width: 780px;
-      color: rgba(255,255,255,0.68);
-      font-size: 18px;
-      margin: 22px 0 0;
+      background: var(--off);
     }
 
     .who {
-      background: var(--off-white);
+      background: var(--white);
     }
 
     .who-grid {
@@ -671,49 +592,45 @@
       padding: 30px;
       border-radius: var(--radius);
       border: 1px solid #e2e8f0;
-      background: #ffffff;
+      background: var(--off);
     }
 
     .who-card h3 {
-      margin: 0 0 18px;
+      margin-bottom: 18px;
       font-size: 28px;
       letter-spacing: -0.055em;
     }
 
     .who-card ul {
+      display: grid;
+      gap: 13px;
       margin: 0;
       padding: 0;
       list-style: none;
-      display: grid;
-      gap: 13px;
     }
 
     .who-card li {
-      color: #475569;
-      padding-left: 26px;
       position: relative;
+      padding-left: 26px;
+      color: #475569;
     }
 
     .who-card li::before {
       content: "";
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: var(--accent-dark);
       position: absolute;
       left: 0;
       top: 8px;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--teal-dark);
     }
 
     .agenda {
+      color: var(--white);
       background:
         radial-gradient(circle at 95% 5%, rgba(41,230,197,0.14), transparent 34%),
         linear-gradient(135deg, #07111f, #0d1b2d);
-      color: var(--white);
-    }
-
-    .agenda .section-copy {
-      color: rgba(255,255,255,0.68);
     }
 
     .agenda-grid {
@@ -728,10 +645,6 @@
       border-radius: var(--radius);
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.13);
-    }
-
-    .agenda-side h2 {
-      color: var(--white);
     }
 
     .agenda-side p {
@@ -755,7 +668,7 @@
     }
 
     .time {
-      color: var(--accent);
+      color: var(--teal);
       font-weight: 900;
       font-size: 14px;
     }
@@ -773,39 +686,8 @@
       font-size: 15px;
     }
 
-    .urgency {
-      background: #ffffff;
-    }
-
-    .urgency-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 38px;
-    }
-
-    .urgency-card {
-      padding: 26px;
-      border-radius: var(--radius);
-      background: var(--off-white);
-      border: 1px solid #e2e8f0;
-    }
-
-    .urgency-card strong {
-      display: block;
-      font-size: 21px;
-      line-height: 1.1;
-      letter-spacing: -0.05em;
-      margin-bottom: 10px;
-    }
-
-    .urgency-card span {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
     .instructor {
-      background: var(--off-white);
+      background: var(--off);
     }
 
     .instructor-card {
@@ -815,13 +697,13 @@
       align-items: center;
       padding: 34px;
       border-radius: 36px;
-      background: #ffffff;
+      background: var(--white);
       border: 1px solid #e2e8f0;
       box-shadow: var(--shadow);
     }
 
     .portrait {
-      min-height: 430px;
+      min-height: 390px;
       border-radius: 30px;
       background:
         linear-gradient(135deg, rgba(41,230,197,0.84), rgba(56,189,248,0.78)),
@@ -853,14 +735,9 @@
       font-size: 14px;
     }
 
-    .instructor-content h2 {
-      margin-bottom: 18px;
-    }
-
     .instructor-content p {
       color: var(--muted);
       font-size: 17px;
-      margin: 0 0 18px;
     }
 
     .proof-grid {
@@ -873,7 +750,7 @@
     .proof-stat {
       padding: 18px;
       border-radius: 20px;
-      background: var(--off-white);
+      background: var(--off);
       border: 1px solid #e2e8f0;
     }
 
@@ -891,7 +768,7 @@
     }
 
     .details {
-      background: #ffffff;
+      background: var(--white);
     }
 
     .details-grid {
@@ -904,7 +781,7 @@
       padding: 24px;
       border-radius: 24px;
       border: 1px solid #e2e8f0;
-      background: var(--off-white);
+      background: var(--off);
     }
 
     .detail-card span {
@@ -947,7 +824,7 @@
     }
 
     .faq {
-      background: var(--off-white);
+      background: var(--off);
     }
 
     .faq-grid {
@@ -965,7 +842,7 @@
     details {
       padding: 20px 22px;
       border-radius: 22px;
-      background: #ffffff;
+      background: var(--white);
       border: 1px solid #e2e8f0;
     }
 
@@ -981,12 +858,12 @@
     }
 
     .final-cta {
-      padding: 90px 0;
+      padding: 88px 0;
+      text-align: center;
+      color: var(--white);
       background:
         radial-gradient(circle at 20% 20%, rgba(41,230,197,0.18), transparent 35%),
         linear-gradient(135deg, #07111f, #0f172a);
-      color: var(--white);
-      text-align: center;
     }
 
     .final-cta h2 {
@@ -1030,23 +907,16 @@
 
       .hero-grid,
       .problem-grid,
-      .split-grid,
       .agenda-grid,
       .instructor-card,
       .faq-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-visual {
-        max-width: 620px;
-      }
-
-      .outcome-grid,
+      .cards-3,
       .prompt-grid,
-      .example-grid,
       .details-grid,
-      .proof-grid,
-      .urgency-grid {
+      .proof-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -1067,7 +937,7 @@
       }
 
       section {
-        padding: 68px 0;
+        padding: 62px 0;
       }
 
       .hero {
@@ -1095,19 +965,17 @@
         font-size: 21px;
       }
 
-      .outcome-grid,
+      .cards-3,
       .prompt-grid,
-      .example-grid,
       .who-grid,
       .details-grid,
-      .proof-grid,
-      .urgency-grid {
+      .proof-grid {
         grid-template-columns: 1fr;
       }
 
       .quote-card,
       .instructor-card,
-      .mindset-panel {
+      .promise-panel {
         padding: 24px;
       }
 
@@ -1138,7 +1006,8 @@
         </a>
 
         <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#learn">What you’ll learn</a>
+          <a href="#outcomes">What you’ll get</a>
+          <a href="#examples">Examples</a>
           <a href="#agenda">Agenda</a>
           <a href="#instructor">Karsten</a>
           <a href="#register" class="nav-cta">Save my seat</a>
@@ -1147,6 +1016,7 @@
     </header>
 
     <main>
+
       <section class="hero">
         <div class="container hero-grid">
           <div>
@@ -1155,23 +1025,23 @@
               Practical AI workshop for business owners
             </div>
 
-            <h1>Bring one annoying business task. Leave with a smarter way to handle it.</h1>
+            <h1>Bring one annoying business task. Leave with an AI workflow you can use this week.</h1>
 
             <p class="hero-text">
-              A hands-on AI workshop for business owners who feel behind, overwhelmed, or unsure where to start.
+              A hands-on workshop for business owners who feel behind on AI and want a simple, practical place to start.
             </p>
 
             <p class="hero-text">
-              Learn simple ways to use AI for admin, email, research, planning, troubleshooting, documents, and everyday business problems without needing to become technical.
+              No coding. No hype. Bring a real task from your business and learn how to use AI to research, organize, troubleshoot, or simplify it.
             </p>
 
             <div class="hero-actions">
               <a href="#register" class="button button-primary">Save my seat</a>
-              <a href="#learn" class="button button-secondary">See what you’ll learn</a>
+              <a href="#outcomes" class="button button-secondary">See what you’ll get</a>
             </div>
 
             <p class="hero-proof">
-              No coding. No hype. No pretending AI will magically fix your business. Just a practical place to start.
+              You do not need to master AI. You need one useful win.
             </p>
           </div>
 
@@ -1188,27 +1058,27 @@
                 </div>
 
                 <div class="mock-body">
-                  <div class="workflow-label">Workshop output</div>
-                  <h2 class="workflow-title">Turn one annoying task into a smarter workflow</h2>
+                  <div class="label">Workshop output</div>
+                  <h2 class="workflow-title">Your first practical AI workflow</h2>
 
-                  <div class="workflow-steps">
-                    <div class="step-card">
+                  <div class="steps">
+                    <div class="step">
                       <div class="step-number">1</div>
                       <div>
                         <strong>Pick one real task</strong>
-                        <span>Bring something slow, messy, repetitive, or confusing.</span>
+                        <span>Bring something slow, repetitive, confusing, or annoying.</span>
                       </div>
                     </div>
 
-                    <div class="step-card">
+                    <div class="step">
                       <div class="step-number">2</div>
                       <div>
                         <strong>Learn how AI can help</strong>
-                        <span>See where AI fits, where it does not, and what to ask.</span>
+                        <span>See what to ask, what context to give, and where AI fits.</span>
                       </div>
                     </div>
 
-                    <div class="step-card">
+                    <div class="step">
                       <div class="step-number">3</div>
                       <div>
                         <strong>Leave with a next step</strong>
@@ -1221,30 +1091,18 @@
 
               <div class="floating-chip">
                 Start smaller than you think.
-                <span>One useful win beats a hundred AI tips.</span>
+                <span>One useful workflow beats a hundred AI tips.</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <div class="pills">
-        <div class="container pills-inner">
-          <span>Use AI for real work:</span>
-          <span class="mini-pill">Admin</span>
-          <span class="mini-pill">Email</span>
-          <span class="mini-pill">Research</span>
-          <span class="mini-pill">Documents</span>
-          <span class="mini-pill">Troubleshooting</span>
-          <span class="mini-pill">Planning</span>
-        </div>
-      </div>
-
       <section class="problem">
         <div class="container problem-grid">
           <div class="quote-card">
-            <p>Most business owners know AI matters. They just don’t know what to do with it.</p>
-            <span>That is the gap this workshop is built to close.</span>
+            <p>AI feels overwhelming because most advice starts too big.</p>
+            <span>Most owners do not need 47 tools. They need one practical first step.</span>
           </div>
 
           <div class="problem-list">
@@ -1252,7 +1110,7 @@
               <div class="check">✓</div>
               <div>
                 <strong>You have heard the hype.</strong>
-                <span>AI is changing everything. AI will transform business. Maybe. But that does not tell you what to do Monday morning.</span>
+                <span>AI is changing everything. Maybe. But that does not tell you what to do Monday morning.</span>
               </div>
             </div>
 
@@ -1267,8 +1125,8 @@
             <div class="problem-item">
               <div class="check">✓</div>
               <div>
-                <strong>You need a practical starting point.</strong>
-                <span>Not a lecture. Not a technical deep dive. One real task. One smarter way to handle it.</span>
+                <strong>You need one useful win.</strong>
+                <span>The inbox. The messy process. The customer question. The task you keep avoiding.</span>
               </div>
             </div>
           </div>
@@ -1276,69 +1134,44 @@
       </section>
 
       <section class="promise">
-        <div class="container split-grid">
-          <div class="section-header">
-            <div class="section-kicker">The main idea</div>
-            <h2>You don’t need to master AI. You need one useful win.</h2>
-          </div>
-
-          <div class="simple-card">
-            <h3>Small wins first.</h3>
-            <p class="big-copy">
+        <div class="container">
+          <div class="promise-panel">
+            <div class="section-kicker">The promise</div>
+            <h2>You do not need to master AI. You need one useful win.</h2>
+            <p>
               This workshop helps you take one real business problem and start using AI to think through it, organize it, research it, troubleshoot it, or turn it into a clearer process.
-            </p>
-            <p class="big-copy" style="margin-top: 18px;">
-              That is how you get moving without getting overwhelmed.
             </p>
           </div>
         </div>
       </section>
 
-      <section class="outcomes" id="learn">
+      <section class="outcomes" id="outcomes">
         <div class="container">
           <div class="section-header">
-            <div class="section-kicker">What you’ll learn</div>
-            <h2>Use AI for normal business problems.</h2>
+            <div class="section-kicker">What you’ll get</div>
+            <h2>Leave with something you can actually use.</h2>
             <p class="section-copy">
-              The goal is not to impress you with AI. The goal is to help you see where it can actually help your business.
+              This is not a lecture about the future of AI. It is a working session built around real business tasks.
             </p>
           </div>
 
-          <div class="outcome-grid">
-            <div class="outcome-card">
-              <div class="card-icon">01</div>
-              <h3>Admin and busywork</h3>
-              <p>Use AI to help with repetitive tasks, summaries, drafts, checklists, internal notes, and the stuff that keeps piling up.</p>
+          <div class="cards-3">
+            <div class="card soft">
+              <div class="icon">01</div>
+              <h3>One task mapped into an AI workflow</h3>
+              <p>Bring a task from your business and learn how to break it down into something AI can help with.</p>
             </div>
 
-            <div class="outcome-card">
-              <div class="card-icon">02</div>
-              <h3>Research and decisions</h3>
-              <p>Use AI to quickly understand a topic, compare options, summarize information, and create a simple report you can actually read.</p>
+            <div class="card soft">
+              <div class="icon">02</div>
+              <h3>Starter prompts you can reuse</h3>
+              <p>Get simple prompts you can copy, paste, and adapt for your own business.</p>
             </div>
 
-            <div class="outcome-card">
-              <div class="card-icon">03</div>
-              <h3>Email and follow-up</h3>
-              <p>Use AI to sort through ideas, draft responses, clarify next steps, and make communication less painful.</p>
-            </div>
-
-            <div class="outcome-card">
-              <div class="card-icon">04</div>
-              <h3>Documents and company knowledge</h3>
-              <p>Use AI to interact with manuals, policies, procedures, FAQs, training notes, and internal documents in plain English.</p>
-            </div>
-
-            <div class="outcome-card">
-              <div class="card-icon">05</div>
-              <h3>Troubleshooting</h3>
-              <p>Use AI to help diagnose problems, explain technical information, read images, and create step-by-step action plans.</p>
-            </div>
-
-            <div class="outcome-card">
-              <div class="card-icon">06</div>
-              <h3>Website and marketing support</h3>
-              <p>Use AI to improve copy, clarify offers, brainstorm campaigns, and make customer-facing material easier to understand.</p>
+            <div class="card soft">
+              <div class="icon">03</div>
+              <h3>Practical examples you can model</h3>
+              <p>See how AI can help with research, documents, troubleshooting, communication, and messy processes.</p>
             </div>
           </div>
         </div>
@@ -1348,9 +1181,9 @@
         <div class="container">
           <div class="section-header">
             <div class="section-kicker">Concrete takeaway</div>
-            <h2>You’ll leave with prompts you can copy, paste, and adapt.</h2>
+            <h2>You’ll leave with prompts you can use right away.</h2>
             <p class="section-copy">
-              The goal is not just to understand AI better. The goal is to leave with something usable.
+              You will not leave wondering what to type into AI next.
             </p>
           </div>
 
@@ -1369,80 +1202,35 @@
               <strong>Prompt idea</strong>
               How would I turn this messy task into a repeatable workflow?
             </div>
-
-            <div class="prompt-card">
-              <strong>Prompt idea</strong>
-              What questions should I ask before making this decision?
-            </div>
-
-            <div class="prompt-card">
-              <strong>Prompt idea</strong>
-              How can I explain this more clearly to customers or staff?
-            </div>
-
-            <div class="prompt-card">
-              <strong>Prompt idea</strong>
-              What information would I need to give AI to get a better answer?
-            </div>
           </div>
         </div>
       </section>
 
-      <section class="examples">
+      <section class="examples" id="examples">
         <div class="container">
           <div class="section-header">
             <div class="section-kicker">Real examples</div>
             <h2>Not theory. Actual use cases.</h2>
             <p class="section-copy">
-              AI starts to click when you see it used on everyday problems you already recognize.
+              AI starts to click when you see it used on problems you already recognize.
             </p>
           </div>
 
-          <div class="example-grid">
-            <div class="example-card">
+          <div class="cards-3">
+            <div class="card">
               <h3>Turn manuals into answers</h3>
               <p>Take old equipment manuals, documents, or notes and make them easier to search, understand, and use.</p>
             </div>
 
-            <div class="example-card">
+            <div class="card">
               <h3>Troubleshoot with photos</h3>
               <p>Use images, labels, diagrams, or parts to help AI explain what you are looking at and what to try next.</p>
             </div>
 
-            <div class="example-card">
-              <h3>Research faster</h3>
-              <p>Ask AI to gather information, organize it, summarize it, and point you back to the original sources.</p>
-            </div>
-
-            <div class="example-card">
+            <div class="card">
               <h3>Create a company brain</h3>
               <p>Turn policies, procedures, FAQs, and training notes into knowledge your team can interact with in plain English.</p>
             </div>
-
-            <div class="example-card">
-              <h3>Fix the blank page problem</h3>
-              <p>Use AI to help draft, revise, and clarify customer-facing messages, website copy, and internal communication.</p>
-            </div>
-
-            <div class="example-card">
-              <h3>Clean up messy processes</h3>
-              <p>Turn scattered steps, ideas, and repeated tasks into a simple checklist or workflow.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mindset">
-        <div class="container">
-          <div class="mindset-panel">
-            <div class="section-kicker">A healthier way to think about AI</div>
-            <h2>AI is not the work. It helps you get back to the work.</h2>
-            <p>
-              Your business does not exist so you can sit in front of a screen all day. It exists to serve customers, solve problems, lead people, create value, and do the work only humans can do.
-            </p>
-            <p>
-              Used badly, AI becomes another distraction. Used well, it helps clear the clutter so you can move faster and spend less time buried in the tasks that pull you away from the work that matters.
-            </p>
           </div>
         </div>
       </section>
@@ -1453,7 +1241,7 @@
             <div class="section-kicker">Who it’s for</div>
             <h2>Built for owners and operators who need a practical first step.</h2>
             <p class="section-copy">
-              You do not need another prediction about the future. You need help using AI inside the business you already have.
+              For people who know AI matters but have not found a simple way to use it in their actual business yet.
             </p>
           </div>
 
@@ -1461,24 +1249,18 @@
             <div class="who-card">
               <h3>This is for you if...</h3>
               <ul>
-                <li>You own or lead a business.</li>
-                <li>You feel behind on AI.</li>
-                <li>You’ve tried ChatGPT but didn’t know what to do next.</li>
-                <li>You are busy and not technical.</li>
-                <li>You want simple examples, not jargon.</li>
-                <li>You have repetitive tasks that eat your time.</li>
-                <li>You need a practical first step.</li>
+                <li>You own or run a business.</li>
+                <li>You’ve tried AI but do not know what to do next.</li>
+                <li>You want practical help, not tech jargon.</li>
               </ul>
             </div>
 
             <div class="who-card">
               <h3>This is not for you if...</h3>
               <ul>
-                <li>You want an advanced coding workshop.</li>
-                <li>You already have AI systems running across your business.</li>
-                <li>You want magic prompts that do everything for you.</li>
-                <li>You are looking for hype, predictions, or entertainment.</li>
-                <li>You do not want to experiment with real business problems.</li>
+                <li>You want an advanced technical workshop.</li>
+                <li>You already have AI workflows running across your business.</li>
+                <li>You want theory instead of doing the work.</li>
               </ul>
             </div>
           </div>
@@ -1490,9 +1272,7 @@
           <div class="agenda-side">
             <div class="section-kicker">Workshop flow</div>
             <h2>Simple. Practical. Built around real tasks.</h2>
-            <p>
-              This is a working session. Bring a real problem and leave with a better way to think about it.
-            </p>
+            <p>Bring a real problem and leave with a better way to handle it.</p>
           </div>
 
           <div class="agenda-list">
@@ -1507,21 +1287,13 @@
             <div class="agenda-item">
               <div class="time">Part 2</div>
               <div>
-                <strong>Where to start</strong>
-                <span>Look at first wins in admin, research, documents, communication, websites, planning, and troubleshooting.</span>
-              </div>
-            </div>
-
-            <div class="agenda-item">
-              <div class="time">Part 3</div>
-              <div>
                 <strong>How to prompt without overthinking it</strong>
                 <span>Learn how to ask better questions, give better context, and get more useful answers.</span>
               </div>
             </div>
 
             <div class="agenda-item">
-              <div class="time">Part 4</div>
+              <div class="time">Part 3</div>
               <div>
                 <strong>Real examples</strong>
                 <span>Walk through practical use cases so you can see what this looks like in normal business situations.</span>
@@ -1529,40 +1301,11 @@
             </div>
 
             <div class="agenda-item">
-              <div class="time">Part 5</div>
+              <div class="time">Part 4</div>
               <div>
-                <strong>Your first AI use case</strong>
-                <span>Think through one task in your business and leave with a clearer next step.</span>
+                <strong>Your first AI workflow</strong>
+                <span>Think through one task from your business and leave with a clearer next step.</span>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="urgency">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-kicker">Why now</div>
-            <h2>You’re probably not as far behind as you think.</h2>
-            <p class="section-copy">
-              Most business owners are still early. Many have opened ChatGPT once or twice, gotten a mediocre answer, and stopped.
-            </p>
-          </div>
-
-          <div class="urgency-grid">
-            <div class="urgency-card">
-              <strong>Most people are still experimenting.</strong>
-              <span>You do not need to catch up with everything. You need to start with one useful task.</span>
-            </div>
-
-            <div class="urgency-card">
-              <strong>Small starts compound.</strong>
-              <span>Once you see one real win, it gets easier to spot the next one.</span>
-            </div>
-
-            <div class="urgency-card">
-              <strong>The tools are accessible right now.</strong>
-              <span>This is a good time to learn, test, make mistakes, and get comfortable.</span>
             </div>
           </div>
         </div>
@@ -1582,11 +1325,11 @@
               </p>
 
               <p>
-                He’ll help translate AI into plain English, practical examples, and simple next steps.
+                He’ll translate AI into practical examples, simple prompts, and clear next steps.
               </p>
 
               <p>
-                The goal is not to impress you with what AI can do. The goal is to help you see where it can actually help your business.
+                The goal is not to impress you with AI. The goal is to help you see where it can actually help your business.
               </p>
 
               <div class="proof-grid">
@@ -1668,33 +1411,18 @@
             </details>
 
             <details>
-              <summary>Is this only about ChatGPT?</summary>
-              <p>No. ChatGPT may be part of it, but the bigger goal is learning how to think with AI and apply it to real business problems.</p>
-            </details>
-
-            <details>
               <summary>What should I bring?</summary>
               <p>Bring one annoying business task. Something repetitive, confusing, slow, messy, or time-consuming.</p>
             </details>
 
             <details>
-              <summary>What if I’ve never used AI before?</summary>
-              <p>That’s fine. This is built for people who are new, skeptical, overwhelmed, or just getting started.</p>
-            </details>
-
-            <details>
               <summary>What if I’ve tried AI and didn’t get much out of it?</summary>
-              <p>That’s normal. Most people stop because they don’t know what to ask, what context to give, or where AI actually fits. We’ll help with that.</p>
+              <p>That’s normal. Most people stop because they do not know what to ask, what context to give, or where AI actually fits.</p>
             </details>
 
             <details>
               <summary>Will I leave with something useful?</summary>
               <p>Yes. You’ll leave with starter prompts, practical examples, and a clearer next step for your own business.</p>
-            </details>
-
-            <details>
-              <summary>Will this be recorded?</summary>
-              <p>Add your final answer here once the replay decision is made.</p>
             </details>
           </div>
         </div>
@@ -1704,7 +1432,7 @@
         <div class="container">
           <h2>Start with one annoying task.</h2>
           <p>
-            You do not need to master AI. You do not need to become technical. You do not need to chase every new tool.
+            You do not need to master AI, become technical, or chase every new tool.
           </p>
           <p>
             Bring one real business problem and learn how to use AI to handle it smarter.
@@ -1716,6 +1444,7 @@
           </div>
         </div>
       </section>
+
     </main>
 
     <footer class="footer">
