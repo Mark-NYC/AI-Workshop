@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>AI Workshop for Business Owners</title>
-  <meta name="description" content="Bring one task that keeps slowing you down. Leave with an AI-assisted workflow you can use this week." />
+  <meta name="description" content="Bring one task that keeps slowing you down. Leave with one recurring business task partially handled before the workshop ends." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -195,6 +195,7 @@
       line-height: 1.05;
       letter-spacing: -0.06em;
       margin-bottom: 18px;
+      font-weight: 900;
     }
 
     .workflow-list {
@@ -204,7 +205,7 @@
 
     .workflow-item {
       display: grid;
-      grid-template-columns: 36px 1fr;
+      grid-template-columns: 42px 1fr;
       gap: 12px;
       align-items: start;
       padding: 14px;
@@ -213,16 +214,27 @@
       border: 1px solid #e2e8f0;
     }
 
-    .number {
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
-      background: var(--teal);
-      color: #06201d;
+    .mini-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--green-soft);
+      color: var(--teal-dark);
       display: grid;
       place-items: center;
-      font-weight: 900;
-      font-size: 13px;
+      flex: 0 0 auto;
+    }
+
+    .mini-icon svg,
+    .card-icon svg,
+    .check-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .workflow-item strong {
@@ -265,7 +277,6 @@
     .bullet-stack {
       display: grid;
       gap: 14px;
-      margin-top: 30px;
     }
 
     .bullet-card {
@@ -323,20 +334,87 @@
       margin-top: 18px;
     }
 
-    .task-section {
+    .case-study {
       background: var(--off);
     }
 
+    .case-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: center;
+      padding: 38px;
+      border-radius: 36px;
+      background:
+        radial-gradient(circle at 8% 15%, rgba(41,230,197,0.13), transparent 28%),
+        linear-gradient(135deg, #07111f, #0d1b2d);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .case-card p {
+      color: rgba(255,255,255,0.68);
+      font-size: 18px;
+    }
+
+    .case-visual {
+      display: grid;
+      gap: 12px;
+    }
+
+    .case-step {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .case-step span {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .case-step strong {
+      display: block;
+      color: var(--white);
+      font-size: 17px;
+      letter-spacing: -0.03em;
+    }
+
+    .task-section {
+      background: var(--white);
+    }
+
+    .session-flow {
+      background: var(--off);
+    }
+
+    .leave-section {
+      background: var(--white);
+    }
+
     .task-grid,
-    .leave-grid {
+    .session-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
       margin-top: 34px;
     }
 
+    .leave-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+
     .task-card,
-    .leave-card {
+    .session-card {
       padding: 22px;
       min-height: 150px;
       border-radius: var(--radius);
@@ -345,35 +423,61 @@
       box-shadow: var(--shadow-soft);
     }
 
-    .task-card span,
-    .leave-card span {
+    .task-card .card-icon,
+    .session-card .card-icon {
       display: inline-flex;
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 16px;
       align-items: center;
       justify-content: center;
       background: var(--green-soft);
       color: var(--teal-dark);
-      font-weight: 900;
       margin-bottom: 16px;
     }
 
     .task-card p,
-    .leave-card p {
+    .session-card p {
       margin: 0;
       font-weight: 800;
       letter-spacing: -0.035em;
       color: #1e293b;
     }
 
-    .leave-section {
+    .session-card {
       background: var(--white);
     }
 
     .leave-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 18px;
+      min-height: auto;
+      border-radius: 18px;
       background: var(--off);
+      border: 1px solid #e2e8f0;
       box-shadow: none;
+    }
+
+    .check-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      background: var(--green-soft);
+      color: var(--teal-dark);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .leave-card p {
+      margin: 0;
+      font-weight: 850;
+      font-size: 15px;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      color: #1e293b;
     }
 
     .karsten {
@@ -439,6 +543,41 @@
       margin-bottom: 28px;
     }
 
+    .faq {
+      background: var(--off);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-soft);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
     .footer {
       padding: 24px 0;
       background: #050b14;
@@ -449,11 +588,17 @@
 
     @media (max-width: 920px) {
       .hero-grid,
-      .karsten-card {
+      .karsten-card,
+      .case-card,
+      .faq-grid {
         grid-template-columns: 1fr;
       }
 
       .task-grid,
+      .session-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .leave-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -477,6 +622,7 @@
       }
 
       .task-grid,
+      .session-grid,
       .leave-grid {
         grid-template-columns: 1fr;
       }
@@ -488,12 +634,13 @@
       .visual-card,
       .workflow-card,
       .promise-panel,
-      .karsten-card {
+      .karsten-card,
+      .case-card {
         padding: 22px;
       }
 
       .task-card,
-      .leave-card {
+      .session-card {
         min-height: auto;
       }
     }
@@ -514,14 +661,18 @@
           <h1>Bring one task that keeps slowing you down.</h1>
 
           <p class="hero-sub">
-            Leave with an AI-assisted workflow you can use this week.
+            Leave with one recurring business task partially handled before the workshop ends.
           </p>
 
           <p class="hero-meta">
             No coding. No hype. No sensitive business data required.
           </p>
 
-          <a href="#register" class="button">Save My Seat</a>
+          <a href="#register" class="button">Build My First Workflow</a>
+
+          <p class="hero-note">
+            Capped intentionally so people can get live help on their actual business process.
+          </p>
         </div>
 
         <div class="visual-card">
@@ -531,7 +682,9 @@
 
             <div class="workflow-list">
               <div class="workflow-item">
-                <div class="number">1</div>
+                <div class="mini-icon">
+                  <svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg>
+                </div>
                 <div>
                   <strong>Bring a real bottleneck</strong>
                   <span>The task you keep doing manually.</span>
@@ -539,7 +692,9 @@
               </div>
 
               <div class="workflow-item">
-                <div class="number">2</div>
+                <div class="mini-icon">
+                  <svg viewBox="0 0 24 24"><path d="M6 4h12v6H6z"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path></svg>
+                </div>
                 <div>
                   <strong>Reshape it with AI</strong>
                   <span>Make it clearer, faster, and repeatable.</span>
@@ -547,7 +702,9 @@
               </div>
 
               <div class="workflow-item">
-                <div class="number">3</div>
+                <div class="mini-icon">
+                  <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+                </div>
                 <div>
                   <strong>Leave with a first version</strong>
                   <span>Something you can use this week.</span>
@@ -596,6 +753,38 @@
       </div>
     </section>
 
+    <section class="case-study">
+      <div class="container">
+        <div class="case-card">
+          <div>
+            <div class="section-kicker">Example outcome</div>
+            <h2>What this could look like in a real business.</h2>
+            <p>
+              Placeholder case study: A local service business had the same customer questions coming in every week. Instead of answering from scratch, they turned those repeated questions into a simple AI-assisted response workflow.
+            </p>
+            <p>
+              The result: faster replies, fewer dropped balls, and a repeatable process the owner could improve or hand off.
+            </p>
+          </div>
+
+          <div class="case-visual">
+            <div class="case-step">
+              <span>Before</span>
+              <strong>Repeated questions lived in the owner’s head.</strong>
+            </div>
+            <div class="case-step">
+              <span>Built</span>
+              <strong>A simple answer bank plus AI-assisted reply workflow.</strong>
+            </div>
+            <div class="case-step">
+              <span>After</span>
+              <strong>Faster responses and less owner dependency.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="task-section">
       <div class="container">
         <div class="section-kicker">What you can bring</div>
@@ -603,28 +792,75 @@
 
         <div class="task-grid">
           <div class="task-card">
-            <span>01</span>
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg>
+            </div>
             <p>Follow-up emails you keep rewriting</p>
           </div>
 
           <div class="task-card">
-            <span>02</span>
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M17 11a3 3 0 0 0 0-6"></path><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path></svg>
+            </div>
             <p>Questions your staff asks over and over</p>
           </div>
 
           <div class="task-card">
-            <span>03</span>
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M6 4h12v6H6z"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path></svg>
+            </div>
             <p>A process nobody follows consistently</p>
           </div>
 
           <div class="task-card">
-            <span>04</span>
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h5"></path><path d="M9 12h6"></path><path d="M9 16h6"></path></svg>
+            </div>
             <p>A document nobody wants to dig through</p>
           </div>
 
           <div class="task-card">
-            <span>05</span>
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5L21 21"></path></svg>
+            </div>
             <p>A decision or research task you keep avoiding</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="session-flow">
+      <div class="container">
+        <div class="section-kicker">Inside the 90 minutes</div>
+        <h2>You will not just listen. You will work on one real task.</h2>
+
+        <div class="session-grid">
+          <div class="session-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
+            </div>
+            <p>Pick the task that is costing you time</p>
+          </div>
+
+          <div class="session-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg>
+            </div>
+            <p>Break down what currently happens</p>
+          </div>
+
+          <div class="session-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z"></path></svg>
+            </div>
+            <p>Use AI to create a clearer first version</p>
+          </div>
+
+          <div class="session-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
+            <p>Leave with the next step to use it again</p>
           </div>
         </div>
       </div>
@@ -637,27 +873,37 @@
 
         <div class="leave-grid">
           <div class="leave-card">
-            <span>✓</span>
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
             <p>One task clarified</p>
           </div>
 
           <div class="leave-card">
-            <span>✓</span>
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
             <p>One workflow started</p>
           </div>
 
           <div class="leave-card">
-            <span>✓</span>
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
             <p>AI workflow worksheet</p>
           </div>
 
           <div class="leave-card">
-            <span>✓</span>
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
             <p>Prompt/template library</p>
           </div>
 
           <div class="leave-card">
-            <span>✓</span>
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
             <p>Replay included</p>
           </div>
         </div>
@@ -674,7 +920,11 @@
             <h2>Karsten translates AI into practical business use.</h2>
 
             <p>
-              He will show how AI can take something messy, like a manual, process, customer question, or repeated task, and turn it into something easier to search, understand, and act on.
+              Karsten translates AI into practical business use. In the workshop, he will show how a messy task, like a manual, customer question, repeated process, or internal knowledge gap, can become something easier to search, understand, and act on.
+            </p>
+
+            <p>
+              Placeholder proof: add one real example here from Karsten, such as a water heater issue, farm manual, equipment label, customer support workflow, or process he fixed with AI in minutes.
             </p>
 
             <p>
@@ -689,7 +939,51 @@
       <div class="container">
         <h2>Capped at 20 people.</h2>
         <p>$39 early bird. $57 regular.</p>
-        <a href="#" class="button">Save My Seat</a>
+        <a href="#" class="button">Build My First Workflow</a>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container faq-grid">
+        <div>
+          <div class="section-kicker">Questions</div>
+          <h2>For the owner who is interested but skeptical.</h2>
+          <p class="section-copy">
+            You do not need to become technical. You need one task worth improving.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Do I need to know how to code?</summary>
+            <p>No. This is for business owners, not developers.</p>
+          </details>
+
+          <details>
+            <summary>What kind of task should I bring?</summary>
+            <p>Bring anything repetitive, confusing, slow, messy, or mentally draining. Customer follow-up, staff questions, research, documents, admin, planning, or troubleshooting all work.</p>
+          </details>
+
+          <details>
+            <summary>What if I have tried AI and it was not helpful?</summary>
+            <p>That is common. Most people get weak results because they do not know where AI fits or what context to give it. This workshop helps you apply it to a real business problem.</p>
+          </details>
+
+          <details>
+            <summary>Do I need to bring private business information?</summary>
+            <p>No. Bring the shape of the task, not sensitive customer data, passwords, financial records, or private internal information.</p>
+          </details>
+
+          <details>
+            <summary>What is included?</summary>
+            <p>You get the live workshop, replay access, an AI workflow worksheet, and a prompt/template library you can keep using after the session.</p>
+          </details>
+
+          <details>
+            <summary>What will I leave with?</summary>
+            <p>You will leave with one task clarified, one AI-assisted workflow started, and a clearer next step for using AI in your business.</p>
+          </details>
+        </div>
       </div>
     </section>
 
