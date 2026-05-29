@@ -155,6 +155,43 @@
       backdrop-filter: blur(18px);
     }
 
+    .hero-image-card {
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      overflow: hidden;
+      background: #0f172a;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .hero-image-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 320px;
+      object-fit: cover;
+    }
+
+    .hero-image-badge {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(7, 17, 31, 0.82);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      backdrop-filter: blur(12px);
+    }
+
     .sample-output {
       border-radius: 24px;
       background: var(--white);
@@ -915,39 +952,35 @@
         </div>
 
         <div class="hero-visual">
-          <div class="sample-output">
+          <div class="hero-image-card">
             <div class="mock-top">
               <div class="mock-dots"><span></span><span></span><span></span></div>
               <div class="mock-label">Example workshop output</div>
             </div>
 
+            <div class="hero-image-wrap">
+              <img src="images/AI-Workshop-Hero.webp" alt="Example of uploading a manual image to Claude to get repair instructions" />
+              <div class="hero-image-badge">Manual photo → usable repair steps</div>
+            </div>
+
             <div class="sample-body">
-              <div class="sample-title">Customer follow-up workflow</div>
+              <div class="sample-title">Turn a messy task into usable next steps.</div>
 
               <div class="sample-rows">
                 <div class="sample-row">
                   <span>Before</span>
-                  <strong>The owner rewrites every customer reply from scratch.</strong>
+                  <strong>Important information is buried in a manual, photo, note, or process.</strong>
                 </div>
 
                 <div class="sample-row">
-                  <span>Task</span>
-                  <strong>“How do I respond faster when customers ask about pricing, availability, or next steps?”</strong>
-                </div>
-
-                <div class="sample-row">
-                  <span>Process</span>
-                  <strong>Identify the question, choose a reply template, add the missing detail, send the next step, log the follow-up.</strong>
+                  <span>During</span>
+                  <strong>AI helps read the context, organize the issue, and clarify what to do next.</strong>
                 </div>
 
                 <div class="sample-row">
                   <span>Leaves with</span>
-                  <strong>A reusable prompt, reply template, and follow-up checklist.</strong>
+                  <strong>A reusable prompt, clearer instructions, and a repeatable process.</strong>
                 </div>
-              </div>
-
-              <div class="prompt-pill">
-                Sample prompt: “Turn this customer question into a reusable response workflow my team can use.”
               </div>
             </div>
           </div>
