@@ -159,6 +159,10 @@
       overflow: hidden;
     }
 
+    .hero-picture {
+      display: block;
+    }
+
     .hero-main-image {
       display: block;
       width: 100%;
@@ -550,9 +554,19 @@
         font-size: 13px;
       }
 
+      .hero-visual {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        border-radius: 0;
+        box-shadow: none;
+      }
+
       .hero-main-image {
-        max-height: 260px;
-        object-fit: contain;
+        width: 100%;
+        max-height: none;
+        object-fit: cover;
+        border-radius: 0;
       }
 
       section { padding: 48px 0; }
@@ -655,11 +669,14 @@
         </div>
 
         <div class="hero-visual">
-          <img
-            src="images/AI-Workshop-Hero.webp"
-            alt="Example of uploading a manual photo to Claude to get repair instructions"
-            class="hero-main-image"
-          />
+          <picture class="hero-picture">
+            <source media="(max-width: 640px)" srcset="images/Manual-Hero-Example-Mobile.webp" />
+            <img
+              src="images/AI-Workshop-Hero.webp"
+              alt="Example of uploading a manual photo to Claude to get repair instructions"
+              class="hero-main-image"
+            />
+          </picture>
         </div>
       </div>
     </section>
