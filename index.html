@@ -79,8 +79,8 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 52px;
+      grid-template-columns: 1.14fr 0.86fr;
+      gap: 64px;
       align-items: center;
     }
 
@@ -147,6 +147,8 @@
     .button:hover { transform: translateY(-2px); }
 
     .hero-visual {
+      width: min(100%, 440px);
+      justify-self: end;
       padding: 0;
       border-radius: 34px;
       background: transparent;
@@ -262,10 +264,11 @@
     }
 
     .objections {
-      margin-top: -32px;
+      margin-top: 0;
       position: relative;
-      z-index: 5;
-      padding: 0 0 56px;
+      z-index: 1;
+      padding: 48px 0 56px;
+      background: var(--off);
     }
 
     .objection-grid {
@@ -279,7 +282,7 @@
       border-radius: 24px;
       background: var(--white);
       border: 1px solid #e2e8f0;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-soft);
     }
 
     .objection-card h3 {
@@ -777,6 +780,11 @@
         grid-template-columns: 1fr;
       }
 
+      .hero-visual {
+        width: 100%;
+        justify-self: stretch;
+      }
+
       .objection-grid,
       .session-grid,
       .leave-grid {
@@ -906,17 +914,13 @@
           <h1>Bring one task that keeps slowing you down.</h1>
 
           <p class="hero-sub">
-            Leave with a faster AI-assisted way to handle it before the workshop ends.
-          </p>
-
-          <p class="hero-meta">
-            90 minutes · $39 early bird · capped at 20 people
+            Leave with a faster AI-assisted way to handle it before the 90 minutes are over.
           </p>
 
           <a href="#register" class="button">Save My Seat</a>
 
           <p class="hero-note">
-            No coding. No tech skills. No sensitive business data required. You’ll get the Zoom link, replay, worksheet, and prompt library.
+            No coding. No tech skills. No sensitive business data required.
           </p>
         </div>
 
