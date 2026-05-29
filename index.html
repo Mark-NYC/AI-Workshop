@@ -26,16 +26,10 @@
       --green-soft: #dffcf7;
       --shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
       --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.07);
-      --radius: 28px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -45,26 +39,11 @@
       line-height: 1.5;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
+    .page { overflow: hidden; }
+    .container { width: min(1040px, calc(100% - 40px)); margin: 0 auto; }
 
-    .page {
-      overflow: hidden;
-    }
-
-    .container {
-      width: min(1040px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
+    h1, h2, h3, p { margin-top: 0; }
 
     h1 {
       margin-bottom: 22px;
@@ -159,9 +138,7 @@
       cursor: pointer;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-    }
+    .button:hover { transform: translateY(-2px); }
 
     .hero-note {
       margin-top: 18px;
@@ -189,9 +166,7 @@
       border-radius: 34px;
     }
 
-    section {
-      padding: 70px 0;
-    }
+    section { padding: 70px 0; }
 
     .section-kicker {
       color: var(--teal-dark);
@@ -209,9 +184,7 @@
       margin-bottom: 0;
     }
 
-    .pain {
-      background: var(--off);
-    }
+    .pain { background: var(--off); }
 
     .pain-panel {
       display: grid;
@@ -272,16 +245,14 @@
     .inside-grid {
       display: grid;
       grid-template-columns: 0.85fr 1.15fr;
-      gap: 54px;
+      grid-template-areas:
+        "copy image"
+        "steps image";
+      gap: 28px 54px;
       align-items: center;
     }
 
-    .inside-copy {
-      padding: 0;
-      background: transparent;
-      border: 0;
-    }
-
+    .inside-copy { grid-area: copy; }
     .inside-copy p {
       color: rgba(255,255,255,0.7);
       font-size: 19px;
@@ -290,6 +261,7 @@
     }
 
     .inside-prompt-wrap {
+      grid-area: image;
       display: grid;
       justify-items: center;
       gap: 14px;
@@ -311,8 +283,10 @@
       text-align: center;
     }
 
+    .inside-steps-wrap { grid-area: steps; }
+
     .simple-steps {
-      margin: 28px 0 0;
+      margin: 0;
       padding: 0;
       list-style: none;
       display: grid;
@@ -345,89 +319,49 @@
     }
 
     .included-line {
-      margin-top: 28px;
+      margin: 28px 0 0;
       color: rgba(255,255,255,0.68);
       font-size: 15px;
       font-weight: 750;
     }
 
-    .included-line strong {
-      color: var(--white);
-    }
+    .included-line strong { color: var(--white); }
 
-    .icon-box svg,
-    .check-icon svg {
-      width: 22px;
-      height: 22px;
-      stroke: currentColor;
-      stroke-width: 2.2;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .example {
+    .examples-strip {
       background: var(--off);
+      padding: 52px 0;
     }
 
-    .example-card {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 30px;
-      align-items: center;
-      padding: 38px;
-      border-radius: 36px;
-      background:
-        radial-gradient(circle at 8% 15%, rgba(41,230,197,0.13), transparent 28%),
-        linear-gradient(135deg, #07111f, #0d1b2d);
-      color: var(--white);
-      box-shadow: var(--shadow);
-    }
-
-    .example-card p {
-      color: rgba(255,255,255,0.68);
-      font-size: 18px;
-    }
-
-    .example-visual {
-      display: grid;
-      gap: 12px;
-    }
-
-    .example-step {
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.13);
-    }
-
-    .example-step span {
-      display: inline-block;
-      margin-bottom: 8px;
-      color: var(--teal);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .example-step strong {
-      display: block;
-      color: var(--white);
-      font-size: 17px;
-      letter-spacing: -0.03em;
-    }
-
-    .task-types {
-      margin-top: 22px;
-      color: rgba(255,255,255,0.7);
-      font-size: 15px;
-      font-weight: 650;
-    }
-
-    .karsten {
+    .examples-panel {
+      padding: 30px;
+      border-radius: 30px;
       background: var(--white);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-soft);
     }
+
+    .examples-panel h2 {
+      margin-bottom: 12px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .chip {
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--teal-dark);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .karsten { background: var(--white); }
 
     .karsten-card {
       display: grid;
@@ -518,10 +452,7 @@
       align-items: start;
     }
 
-    .faq-list {
-      display: grid;
-      gap: 12px;
-    }
+    .faq-list { display: grid; gap: 12px; }
 
     details {
       padding: 20px 22px;
@@ -554,10 +485,16 @@
       .hero-grid,
       .pain-panel,
       .inside-grid,
-      .example-card,
       .karsten-card,
       .faq-grid {
         grid-template-columns: 1fr;
+      }
+
+      .inside-grid {
+        grid-template-areas:
+          "copy"
+          "image"
+          "steps";
       }
 
       .hero-visual {
@@ -565,52 +502,116 @@
         justify-self: stretch;
       }
 
-      .inside-prompt-wrap {
-        order: -1;
-      }
-
       .prompt-example-image {
         width: min(100%, 380px);
       }
 
-      .portrait {
-        min-height: 280px;
-      }
+      .portrait { min-height: 280px; }
     }
 
     @media (max-width: 640px) {
-      .container {
-        width: min(100% - 28px, 1040px);
+      .container { width: min(100% - 28px, 1040px); }
+
+      h1 {
+        font-size: clamp(38px, 12vw, 50px);
+        line-height: 0.95;
+        margin-bottom: 14px;
+      }
+
+      h2 {
+        font-size: clamp(31px, 9vw, 42px);
       }
 
       .hero {
-        padding: 72px 0 56px;
+        padding: 44px 0 38px;
       }
 
-      section {
+      .hero-grid {
+        gap: 26px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        margin-bottom: 16px;
+        padding: 7px 11px;
+      }
+
+      .hero-sub {
+        font-size: 17px;
+        margin-bottom: 18px;
+      }
+
+      .hero-for {
+        display: none;
+      }
+
+      .hero-note {
+        margin-top: 12px;
+        font-size: 13px;
+      }
+
+      .hero-main-image {
+        max-height: 260px;
+        object-fit: contain;
+      }
+
+      section { padding: 48px 0; }
+
+      .pain-panel,
+      .karsten-card,
+      .examples-panel {
+        padding: 22px;
+        border-radius: 26px;
+      }
+
+      .pain-panel h2 {
+        font-size: clamp(30px, 9vw, 40px);
+      }
+
+      .pain-panel p,
+      .karsten-card p,
+      .inside-copy p {
+        font-size: 16px;
+      }
+
+      .pain-item {
+        padding: 13px;
+        font-size: 14px;
+      }
+
+      .inside {
         padding: 54px 0;
       }
 
-      .button {
-        width: 100%;
+      .inside-grid {
+        gap: 22px;
       }
-
-      .pain-panel,
-      .inside-copy,
-      .example-card,
-      .karsten-card {
-        padding: 22px;
-      }
-
-
 
       .prompt-example-image {
         width: 100%;
         border-radius: 28px;
       }
 
-      .example-step {
-        padding: 16px;
+      .simple-steps li {
+        font-size: 16px;
+      }
+
+      .examples-strip {
+        padding: 42px 0;
+      }
+
+      .chips {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .chip {
+        border-radius: 16px;
+        text-align: center;
+      }
+
+      .portrait {
+        display: none;
       }
 
       .final-details {
@@ -618,9 +619,9 @@
         grid-template-columns: 1fr;
       }
 
-      .detail-pill {
-        border-radius: 16px;
-      }
+      .detail-pill { border-radius: 16px; }
+
+      .button { width: 100%; }
     }
   </style>
 </head>
@@ -633,7 +634,7 @@
         <div>
           <div class="eyebrow">
             <span class="eyebrow-dot"></span>
-            $39 early bird · 20 seats max · live hands-on workshop
+            $39 early bird · 20 seats max
           </div>
 
           <h1>Bring one business task that keeps slowing you down.</h1>
@@ -649,7 +650,7 @@
           <a href="#register" class="button">Save My Seat</a>
 
           <p class="hero-note">
-            No coding. No tech skills. No sensitive business data required.
+            No coding. No sensitive data.
           </p>
         </div>
 
@@ -668,9 +669,9 @@
         <div class="pain-panel">
           <div>
             <div class="section-kicker">Pain + promise</div>
-            <h2>AI feels overwhelming because most people start too big.</h2>
+            <h2>Start smaller. Get a real win.</h2>
             <p>
-              You do not need 47 tools. You need one annoying task made easier.
+              You do not need 47 tools. Bring one annoying task and make it easier.
             </p>
             <p>
               In this workshop, you bring one real bottleneck and turn it into a repeatable process you can use again.
@@ -685,12 +686,12 @@
 
             <div class="pain-item">
               <div class="check-dot">✓</div>
-              <div>Your team keeps asking you the same questions.</div>
+              <div>Your team asks the same questions.</div>
             </div>
 
             <div class="pain-item">
               <div class="check-dot">✓</div>
-              <div>You tried ChatGPT, got mixed results, and went back to doing it yourself.</div>
+              <div>ChatGPT gave mixed results.</div>
             </div>
           </div>
         </div>
@@ -705,17 +706,6 @@
           <p>
             Bring one real task from your business. We’ll help you turn it into a prompt and process you can reuse.
           </p>
-
-          <ol class="simple-steps">
-            <li><span class="step-number">1</span><span>Pick the task</span></li>
-            <li><span class="step-number">2</span><span>Fill in the prompt</span></li>
-            <li><span class="step-number">3</span><span>Build the first version</span></li>
-            <li><span class="step-number">4</span><span>Leave with the next step</span></li>
-          </ol>
-
-          <p class="included-line">
-            Includes <strong>worksheet</strong>, <strong>prompt library</strong>, and <strong>replay</strong>.
-          </p>
         </div>
 
         <div class="inside-prompt-wrap">
@@ -728,35 +718,36 @@
             Example: turning repeated quote questions into a reusable process.
           </p>
         </div>
+
+        <div class="inside-steps-wrap">
+          <ol class="simple-steps">
+            <li><span class="step-number">1</span><span>Pick the task</span></li>
+            <li><span class="step-number">2</span><span>Fill in the prompt</span></li>
+            <li><span class="step-number">3</span><span>Build the first version</span></li>
+            <li><span class="step-number">4</span><span>Leave with the next step</span></li>
+          </ol>
+
+          <p class="included-line">
+            Includes <strong>worksheet</strong>, <strong>prompt library</strong>, and <strong>replay</strong>.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="example">
+    <section class="examples-strip">
       <div class="container">
-        <div class="example-card">
-          <div>
-            <div class="section-kicker">Example output</div>
-            <h2>Turn a repeated customer question into a reusable reply process.</h2>
-            <p class="task-types">
-              You can bring customer follow-up, staff questions, a messy process, a buried document, or a research task.
-            </p>
-          </div>
-
-          <div class="example-visual">
-            <div class="example-step">
-              <span>Before</span>
-              <strong>You rewrite every reply from scratch.</strong>
-            </div>
-
-            <div class="example-step">
-              <span>During</span>
-              <strong>You map the common question and build a reusable AI prompt.</strong>
-            </div>
-
-            <div class="example-step">
-              <span>After</span>
-              <strong>You leave with a reply template, follow-up checklist, and next question to ask.</strong>
-            </div>
+        <div class="examples-panel">
+          <div class="section-kicker">Examples you can bring</div>
+          <h2>Use it on work you already do.</h2>
+          <p class="section-copy">
+            Customer follow-up, staff questions, messy processes, buried documents, or research tasks.
+          </p>
+          <div class="chips">
+            <div class="chip">Customer follow-up</div>
+            <div class="chip">Staff questions</div>
+            <div class="chip">Messy process</div>
+            <div class="chip">Buried document</div>
+            <div class="chip">Research task</div>
           </div>
         </div>
       </div>
@@ -795,12 +786,10 @@
         </p>
 
         <div class="final-details">
-          <div class="detail-pill">90 minutes</div>
+          <div class="detail-pill">90 minutes live on Zoom</div>
           <div class="detail-pill">$39 early bird</div>
-          <div class="detail-pill">$57 regular</div>
           <div class="detail-pill">20 seats max</div>
-          <div class="detail-pill">Replay included</div>
-          <div class="detail-pill">Worksheet + prompt library</div>
+          <div class="detail-pill">Replay + worksheet + prompt library</div>
         </div>
 
         <a href="#" class="button">Save My Seat</a>
