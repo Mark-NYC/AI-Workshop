@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>AI Workshop for Business Owners</title>
-  <meta name="description" content="Bring one task that keeps slowing you down. Leave with a faster AI-assisted way to handle it before the workshop ends." />
+  <meta name="description" content="Bring one task that keeps slowing you down. Leave with a faster AI-assisted way to handle it before the 90 minutes are over." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,23 +108,17 @@
 
     .hero-sub {
       max-width: 680px;
-      margin-bottom: 20px;
+      margin-bottom: 26px;
       font-size: clamp(19px, 2vw, 23px);
       color: rgba(255,255,255,0.78);
       letter-spacing: -0.02em;
-    }
-
-    .hero-meta {
-      margin: 0 0 26px;
-      color: rgba(255,255,255,0.72);
-      font-weight: 800;
-      font-size: 16px;
     }
 
     .hero-note {
       margin-top: 18px;
       color: rgba(255,255,255,0.62);
       font-size: 14px;
+      max-width: 560px;
     }
 
     .button {
@@ -164,88 +158,7 @@
       border-radius: 34px;
     }
 
-    .sample-output {
-      border-radius: 24px;
-      background: var(--white);
-      color: var(--ink);
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
-    }
-
-    .mock-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px 14px;
-      background: #f8fafc;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .mock-dots { display: flex; gap: 6px; }
-    .mock-dots span { width: 9px; height: 9px; border-radius: 999px; background: #cbd5e1; }
-
-    .mock-label {
-      color: #64748b;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .sample-body { padding: 18px; }
-
-    .sample-title {
-      margin-bottom: 14px;
-      font-size: 26px;
-      line-height: 1.05;
-      letter-spacing: -0.06em;
-      font-weight: 900;
-    }
-
-    .sample-rows {
-      display: grid;
-      gap: 10px;
-    }
-
-    .sample-row {
-      display: grid;
-      grid-template-columns: 92px 1fr;
-      gap: 12px;
-      padding: 13px;
-      border-radius: 16px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-    }
-
-    .sample-row span {
-      color: var(--teal-dark);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .sample-row strong {
-      display: block;
-      color: #1e293b;
-      font-size: 14px;
-      letter-spacing: -0.025em;
-    }
-
-    .prompt-pill {
-      margin-top: 14px;
-      padding: 13px;
-      border-radius: 16px;
-      background: #ecfffb;
-      border: 1px solid #ccfbf1;
-      color: #0f766e;
-      font-size: 13px;
-      font-weight: 800;
-      line-height: 1.35;
-    }
-
-    section { padding: 64px 0; }
+    section { padding: 70px 0; }
 
     .section-kicker {
       color: var(--teal-dark);
@@ -257,61 +170,41 @@
     }
 
     .section-copy {
-      max-width: 720px;
+      max-width: 740px;
       color: var(--muted);
       font-size: 18px;
       margin-bottom: 0;
     }
 
-    .objections {
-      margin-top: 0;
-      position: relative;
-      z-index: 1;
-      padding: 48px 0 56px;
+    .why {
       background: var(--off);
+      padding-top: 54px;
     }
 
-    .objection-grid {
+    .why-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
+      margin-top: 30px;
     }
 
-    .objection-card {
-      padding: 22px;
+    .why-card {
+      padding: 24px;
       border-radius: 24px;
       background: var(--white);
       border: 1px solid #e2e8f0;
       box-shadow: var(--shadow-soft);
     }
 
-    .objection-card h3 {
-      font-size: 20px;
-      margin-bottom: 7px;
+    .why-card h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
     }
 
-    .objection-card p {
+    .why-card p {
       margin: 0;
       color: var(--muted);
       font-size: 15px;
-    }
-
-    .session-flow { background: var(--off); padding-top: 24px; }
-
-    .session-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 34px;
-    }
-
-    .session-card {
-      padding: 22px;
-      min-height: 150px;
-      border-radius: var(--radius);
-      background: var(--white);
-      border: 1px solid #e2e8f0;
-      box-shadow: var(--shadow-soft);
     }
 
     .card-icon,
@@ -338,118 +231,60 @@
       stroke-linejoin: round;
     }
 
-    .session-card p {
-      margin: 0;
-      font-weight: 800;
-      letter-spacing: -0.035em;
-      color: #1e293b;
-    }
-
-    .problem { background: var(--white); }
-
-    .bullet-stack {
-      display: grid;
-      gap: 14px;
-    }
-
-    .bullet-card {
-      display: grid;
-      grid-template-columns: 38px 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 22px;
-      border-radius: 22px;
-      background: var(--off);
-      border: 1px solid #e2e8f0;
-    }
-
-    .check {
-      width: 38px;
-      height: 38px;
-      border-radius: 14px;
-      background: var(--green-soft);
-      color: var(--teal-dark);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-    }
-
-    .bullet-card p {
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: -0.025em;
-      color: #334155;
-    }
-
-    .promise { background: var(--off); }
-
-    .promise-panel {
-      padding: 38px;
-      border-radius: 36px;
+    .inside {
+      color: var(--white);
       background:
         radial-gradient(circle at 90% 10%, rgba(41,230,197,0.18), transparent 34%),
-        var(--ink);
-      color: var(--white);
-      box-shadow: var(--shadow);
+        linear-gradient(135deg, #07111f, #0d1b2d);
     }
 
-    .promise-panel p {
-      max-width: 760px;
-      color: rgba(255,255,255,0.7);
-      font-size: 19px;
-      margin-bottom: 0;
-    }
-
-    .promise-panel p + p { margin-top: 18px; }
-
-    .example-section { background: var(--white); }
-
-    .example-card {
+    .inside-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 30px;
-      align-items: center;
-      padding: 38px;
-      border-radius: 36px;
-      background:
-        radial-gradient(circle at 8% 15%, rgba(41,230,197,0.13), transparent 28%),
-        linear-gradient(135deg, #07111f, #0d1b2d);
-      color: var(--white);
-      box-shadow: var(--shadow);
+      gap: 34px;
+      align-items: start;
     }
 
-    .example-card p {
-      color: rgba(255,255,255,0.68);
-      font-size: 18px;
-    }
-
-    .example-visual {
-      display: grid;
-      gap: 12px;
-    }
-
-    .example-step {
-      padding: 18px;
-      border-radius: 20px;
+    .inside-copy {
+      padding: 34px;
+      border-radius: 30px;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.13);
     }
 
-    .example-step span {
-      display: inline-block;
-      margin-bottom: 8px;
-      color: var(--teal);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .inside-copy p {
+      color: rgba(255,255,255,0.68);
+      font-size: 18px;
+      margin-bottom: 0;
     }
 
-    .example-step strong {
-      display: block;
-      color: var(--white);
-      font-size: 17px;
-      letter-spacing: -0.03em;
+    .inside-copy p + p {
+      margin-top: 16px;
+    }
+
+    .inside-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .inside-step {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .inside-step .card-icon {
+      background: rgba(41,230,197,0.14);
+      color: var(--teal);
+    }
+
+    .inside-step p {
+      margin: 0;
+      color: rgba(255,255,255,0.78);
+      font-weight: 800;
+      letter-spacing: -0.035em;
     }
 
     .task-section { background: var(--off); }
@@ -596,18 +431,14 @@
       transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .slide-option:hover {
-      transform: translateY(-2px);
-    }
+    .slide-option:hover { transform: translateY(-2px); }
 
     .slide-option.active {
       border-color: rgba(15,118,110,0.38);
       box-shadow: var(--shadow);
     }
 
-    .slide-option .card-icon {
-      margin: 0;
-    }
+    .slide-option .card-icon { margin: 0; }
 
     .slide-option strong {
       display: block;
@@ -625,17 +456,26 @@
       line-height: 1.3;
     }
 
-    .mobile-slides {
-      display: none;
-    }
+    .mobile-slides { display: none; }
 
     .leave-section { background: var(--white); }
 
+    .leave-panel {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 34px;
+      align-items: center;
+      padding: 38px;
+      border-radius: 36px;
+      background: var(--off);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow);
+    }
+
     .leave-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin-top: 34px;
     }
 
     .leave-card {
@@ -644,7 +484,7 @@
       gap: 10px;
       padding: 16px 18px;
       border-radius: 18px;
-      background: var(--off);
+      background: var(--white);
       border: 1px solid #e2e8f0;
     }
 
@@ -669,6 +509,9 @@
       color: #1e293b;
     }
 
+    .leave-cta { margin-top: 26px; }
+    .leave-note { margin-top: 14px; color: var(--muted); font-size: 14px; }
+
     .karsten { background: var(--off); }
 
     .karsten-card {
@@ -684,7 +527,7 @@
     }
 
     .portrait {
-      min-height: 360px;
+      min-height: 340px;
       border-radius: 28px;
       background:
         linear-gradient(135deg, rgba(41,230,197,0.84), rgba(56,189,248,0.78)),
@@ -705,32 +548,9 @@
       letter-spacing: -0.08em;
     }
 
-    .karsten-card p {
-      color: var(--muted);
-      font-size: 18px;
-    }
+    .karsten-card p { color: var(--muted); font-size: 18px; }
 
-    .cta-section {
-      padding: 76px 0;
-      color: var(--white);
-      text-align: center;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(41,230,197,0.18), transparent 35%),
-        linear-gradient(135deg, #07111f, #0f172a);
-    }
-
-    .cta-section h2 {
-      max-width: 760px;
-      margin: 0 auto 18px;
-    }
-
-    .cta-section p {
-      color: rgba(255,255,255,0.7);
-      font-size: 18px;
-      margin-bottom: 28px;
-    }
-
-    .faq { background: var(--off); }
+    .faq { background: var(--white); }
 
     .faq-grid {
       display: grid;
@@ -739,29 +559,18 @@
       align-items: start;
     }
 
-    .faq-list {
-      display: grid;
-      gap: 12px;
-    }
+    .faq-list { display: grid; gap: 12px; }
 
     details {
       padding: 20px 22px;
       border-radius: 22px;
-      background: var(--white);
+      background: var(--off);
       border: 1px solid #e2e8f0;
       box-shadow: var(--shadow-soft);
     }
 
-    summary {
-      cursor: pointer;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-    }
-
-    details p {
-      margin: 12px 0 0;
-      color: var(--muted);
-    }
+    summary { cursor: pointer; font-weight: 900; letter-spacing: -0.03em; }
+    details p { margin: 12px 0 0; color: var(--muted); }
 
     .footer {
       padding: 24px 0;
@@ -773,65 +582,31 @@
 
     @media (max-width: 980px) {
       .hero-grid,
-      .example-card,
+      .inside-grid,
       .task-slider,
+      .leave-panel,
       .karsten-card,
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
+      .faq-grid { grid-template-columns: 1fr; }
 
-      .hero-visual {
-        width: 100%;
-        justify-self: stretch;
-      }
-
-      .objection-grid,
-      .session-grid,
-      .leave-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .slide-card-stack {
-        width: min(320px, 44%);
-      }
-
-      .portrait {
-        min-height: 300px;
-      }
+      .hero-visual { width: 100%; justify-self: stretch; }
+      .why-grid,
+      .inside-steps { grid-template-columns: repeat(2, 1fr); }
+      .slide-card-stack { width: min(320px, 44%); }
+      .portrait { min-height: 300px; }
     }
 
     @media (max-width: 640px) {
-      .container {
-        width: min(100% - 28px, 1080px);
-      }
-
-      .hero {
-        padding: 72px 0 56px;
-      }
-
-      section {
-        padding: 52px 0;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .objection-grid,
-      .session-grid,
-      .leave-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .promise-panel,
-      .example-card,
-      .karsten-card {
-        padding: 22px;
-      }
-
-      .task-slider {
-        display: none;
-      }
+      .container { width: min(100% - 28px, 1080px); }
+      .hero { padding: 72px 0 56px; }
+      section { padding: 52px 0; }
+      .button { width: 100%; }
+      .why-grid,
+      .inside-steps,
+      .leave-grid { grid-template-columns: 1fr; }
+      .inside-copy,
+      .leave-panel,
+      .karsten-card { padding: 22px; }
+      .task-slider { display: none; }
 
       .mobile-slides {
         display: flex;
@@ -843,22 +618,9 @@
         -webkit-overflow-scrolling: touch;
       }
 
-      .mobile-slide {
-        min-width: 86%;
-        scroll-snap-align: start;
-      }
-
-      .mobile-slide .slide-mockup {
-        min-height: auto;
-        padding: 22px;
-      }
-
-      .mobile-slide .slide-card-stack {
-        position: static;
-        width: 100%;
-        transform: none;
-        margin-top: 18px;
-      }
+      .mobile-slide { min-width: 86%; scroll-snap-align: start; }
+      .mobile-slide .slide-mockup { min-height: auto; padding: 22px; }
+      .mobile-slide .slide-card-stack { position: static; width: 100%; transform: none; margin-top: 18px; }
 
       .mobile-card-under {
         margin-top: 12px;
@@ -873,29 +635,9 @@
         box-shadow: var(--shadow-soft);
       }
 
-      .mobile-card-under .card-icon {
-        margin: 0;
-      }
-
-      .mobile-card-under strong {
-        display: block;
-        font-size: 17px;
-        letter-spacing: -0.04em;
-        color: #0f172a;
-        margin-bottom: 2px;
-      }
-
-      .mobile-card-under span {
-        display: block;
-        color: var(--muted);
-        font-size: 13px;
-        font-weight: 650;
-        line-height: 1.3;
-      }
-
-      .session-card {
-        min-height: auto;
-      }
+      .mobile-card-under .card-icon { margin: 0; }
+      .mobile-card-under strong { display: block; font-size: 17px; letter-spacing: -0.04em; color: #0f172a; margin-bottom: 2px; }
+      .mobile-card-under span { display: block; color: var(--muted); font-size: 13px; font-weight: 650; line-height: 1.3; }
     }
   </style>
 </head>
@@ -908,7 +650,7 @@
         <div>
           <div class="eyebrow">
             <span class="eyebrow-dot"></span>
-            90 minutes · 20 seats · $39 early bird
+            $39 early bird · 20 seats max · hands-on workshop
           </div>
 
           <h1>Bring one task that keeps slowing you down.</h1>
@@ -934,55 +676,78 @@
       </div>
     </section>
 
-    <section class="objections">
+    <section class="why">
       <div class="container">
-        <div class="objection-grid">
-          <div class="objection-card">
-            <h3>No coding required</h3>
-            <p>This is for business owners, not developers.</p>
+        <div class="section-kicker">Why this works</div>
+        <h2>Start small enough to actually use it.</h2>
+        <p class="section-copy">
+          AI feels overwhelming when everyone starts too big. This workshop starts with one real task from your business and turns it into a clearer repeatable process.
+        </p>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
+            </div>
+            <h3>One task, not 47 tools</h3>
+            <p>You bring a bottleneck that is already costing you time. We do not chase every AI app.</p>
           </div>
 
-          <div class="objection-card">
-            <h3>Bring the shape of the task</h3>
-            <p>No passwords, private customer data, or sensitive records needed.</p>
+          <div class="why-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            </div>
+            <h3>No coding or sensitive data</h3>
+            <p>Bring the shape of the task, not passwords, private customer data, or financial records.</p>
           </div>
 
-          <div class="objection-card">
-            <h3>You’ll work on one real task</h3>
-            <p>This is not a lecture or tool tour.</p>
+          <div class="why-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg>
+            </div>
+            <h3>Work on something real</h3>
+            <p>This is not a lecture or tool tour. You will apply AI to an actual task from your business.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="session-flow">
-      <div class="container">
-        <div class="section-kicker">Inside the 90 minutes</div>
-        <h2>You will not just listen. You will work on one real task.</h2>
+    <section class="inside">
+      <div class="container inside-grid">
+        <div class="inside-copy">
+          <div class="section-kicker">Inside the 90 minutes</div>
+          <h2>One annoying task. One repeatable process. One quick win.</h2>
+          <p>
+            You bring one real bottleneck from your business. We help you break down what happens now, use AI to create a clearer first version, and leave with the next step to use it again.
+          </p>
+          <p>
+            You are not trying to master AI. You are trying to make one piece of work lighter.
+          </p>
+        </div>
 
-        <div class="session-grid">
-          <div class="session-card">
+        <div class="inside-steps">
+          <div class="inside-step">
             <div class="card-icon">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
             </div>
             <p>Pick the task that is costing you time</p>
           </div>
 
-          <div class="session-card">
+          <div class="inside-step">
             <div class="card-icon">
               <svg viewBox="0 0 24 24"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg>
             </div>
             <p>Break down what currently happens</p>
           </div>
 
-          <div class="session-card">
+          <div class="inside-step">
             <div class="card-icon">
               <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z"></path></svg>
             </div>
             <p>Use AI to create a clearer first version</p>
           </div>
 
-          <div class="session-card">
+          <div class="inside-step">
             <div class="card-icon">
               <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
             </div>
@@ -992,80 +757,12 @@
       </div>
     </section>
 
-    <section class="problem">
-      <div class="container">
-        <div class="bullet-stack">
-          <div class="bullet-card">
-            <div class="check">✓</div>
-            <p>AI feels overwhelming because everyone starts too big.</p>
-          </div>
-
-          <div class="bullet-card">
-            <div class="check">✓</div>
-            <p>Too much work lives in your head, and your team keeps coming back to you for answers.</p>
-          </div>
-
-          <div class="bullet-card">
-            <div class="check">✓</div>
-            <p>You tried ChatGPT, got mixed results, and went back to doing it yourself.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="promise">
-      <div class="container">
-        <div class="promise-panel">
-          <div class="section-kicker">The promise</div>
-          <h2>One annoying task. One repeatable process. One quick win.</h2>
-          <p>
-            This is not a lecture. It is a working session.
-          </p>
-          <p>
-            You bring one real bottleneck. We help you reshape it into something clearer, faster, and repeatable.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="example-section">
-      <div class="container">
-        <div class="example-card">
-          <div>
-            <div class="section-kicker">Example output</div>
-            <h2>What this could look like in a real business.</h2>
-            <p>
-              A local service business has the same customer questions coming in every week. Instead of answering from scratch, the workshop turns those repeated questions into a simple AI-assisted response process.
-            </p>
-            <p>
-              The result: faster replies, fewer dropped balls, and a repeatable process the owner can improve or hand off.
-            </p>
-          </div>
-
-          <div class="example-visual">
-            <div class="example-step">
-              <span>Before</span>
-              <strong>Repeated questions live in the owner’s head.</strong>
-            </div>
-            <div class="example-step">
-              <span>Built</span>
-              <strong>A simple answer bank plus AI-assisted reply process.</strong>
-            </div>
-            <div class="example-step">
-              <span>After</span>
-              <strong>Faster responses and less owner dependency.</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="task-section">
       <div class="container">
-        <div class="section-kicker">What should you bring?</div>
+        <div class="section-kicker">What can you bring?</div>
         <h2>Bring one task you already want off your plate.</h2>
         <p class="section-copy">
-          Click an option to see how that kind of task could be turned into a clearer AI-assisted process.
+          Click an option to see how that kind of task could become a clearer AI-assisted process.
         </p>
 
         <div class="task-slider">
@@ -1077,193 +774,75 @@
             </p>
 
             <div class="slide-output">
-              <div class="slide-output-row">
-                <span>Before</span>
-                <strong id="slideBefore">You start from scratch every time.</strong>
-              </div>
-              <div class="slide-output-row">
-                <span>Workshop</span>
-                <strong id="slideDuring">Map the repeated situation and create a reusable AI-assisted reply flow.</strong>
-              </div>
-              <div class="slide-output-row">
-                <span>After</span>
-                <strong id="slideAfter">You have a draft response, follow-up checklist, and next question to ask.</strong>
-              </div>
+              <div class="slide-output-row"><span>Before</span><strong id="slideBefore">You start from scratch every time.</strong></div>
+              <div class="slide-output-row"><span>Workshop</span><strong id="slideDuring">Map the repeated situation and create a reusable AI-assisted reply flow.</strong></div>
+              <div class="slide-output-row"><span>After</span><strong id="slideAfter">You have a draft response, follow-up checklist, and next question to ask.</strong></div>
             </div>
 
             <div class="slide-card-stack">
-              <div class="mini-slide-card">
-                <small>Sample prompt</small>
-                <strong id="slidePrompt">“Turn this customer question into a reusable reply workflow.”</strong>
-              </div>
-              <div class="mini-slide-card">
-                <small>Sample output</small>
-                <strong id="slideOutput">Reply template + checklist + next step</strong>
-              </div>
+              <div class="mini-slide-card"><small>Sample prompt</small><strong id="slidePrompt">“Turn this customer question into a reusable reply workflow.”</strong></div>
+              <div class="mini-slide-card"><small>Sample output</small><strong id="slideOutput">Reply template + checklist + next step</strong></div>
             </div>
           </div>
 
           <div class="slide-nav" id="slideNav">
             <button class="slide-option active" type="button" data-slide="followup">
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg>
-              </div>
-              <div>
-                <strong>Customer follow-up</strong>
-                <span>Repeated replies, quotes, next-step emails, and customer questions.</span>
-              </div>
+              <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></div>
+              <div><strong>Customer follow-up</strong><span>Repeated replies, quotes, next-step emails, and customer questions.</span></div>
             </button>
 
             <button class="slide-option" type="button" data-slide="staff">
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M17 11a3 3 0 0 0 0-6"></path><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path></svg>
-              </div>
-              <div>
-                <strong>Staff questions</strong>
-                <span>The answers your team keeps coming back to you for.</span>
-              </div>
+              <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M17 11a3 3 0 0 0 0-6"></path><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path></svg></div>
+              <div><strong>Staff questions</strong><span>The answers your team keeps coming back to you for.</span></div>
             </button>
 
             <button class="slide-option" type="button" data-slide="process">
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M6 4h12v6H6z"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path></svg>
-              </div>
-              <div>
-                <strong>Messy process</strong>
-                <span>A task nobody follows the same way twice.</span>
-              </div>
+              <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M6 4h12v6H6z"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path></svg></div>
+              <div><strong>Messy process</strong><span>A task nobody follows the same way twice.</span></div>
             </button>
 
             <button class="slide-option" type="button" data-slide="document">
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h5"></path><path d="M9 12h6"></path><path d="M9 16h6"></path></svg>
-              </div>
-              <div>
-                <strong>Buried document</strong>
-                <span>A manual, policy, note, or SOP nobody wants to dig through.</span>
-              </div>
+              <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h5"></path><path d="M9 12h6"></path><path d="M9 16h6"></path></svg></div>
+              <div><strong>Buried document</strong><span>A manual, policy, note, or SOP nobody wants to dig through.</span></div>
             </button>
 
             <button class="slide-option" type="button" data-slide="research">
-              <div class="card-icon">
-                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5L21 21"></path></svg>
-              </div>
-              <div>
-                <strong>Research task</strong>
-                <span>A decision you keep avoiding because there is too much to sort through.</span>
-              </div>
+              <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5L21 21"></path></svg></div>
+              <div><strong>Research task</strong><span>A decision you keep avoiding because there is too much to sort through.</span></div>
             </button>
           </div>
         </div>
 
         <div class="mobile-slides">
-          <div class="mobile-slide">
-            <div class="slide-mockup">
-              <div class="slide-eyebrow">Featured example</div>
-              <div class="slide-title">Customer follow-up</div>
-              <p class="slide-copy">Build a reusable reply process for repeated customer questions.</p>
-              <div class="slide-output">
-                <div class="slide-output-row"><span>Before</span><strong>You start from scratch every time.</strong></div>
-                <div class="slide-output-row"><span>After</span><strong>Reply template + checklist + next step.</strong></div>
-              </div>
-            </div>
-            <div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></div><div><strong>Customer follow-up</strong><span>Repeated replies, quotes, next-step emails, and customer questions.</span></div></div>
-          </div>
-
-          <div class="mobile-slide">
-            <div class="slide-mockup">
-              <div class="slide-eyebrow">Featured example</div>
-              <div class="slide-title">Staff questions</div>
-              <p class="slide-copy">Turn repeated answers into something your team can use.</p>
-              <div class="slide-output">
-                <div class="slide-output-row"><span>Before</span><strong>Your team keeps coming back to you.</strong></div>
-                <div class="slide-output-row"><span>After</span><strong>Answer bank + simple internal process.</strong></div>
-              </div>
-            </div>
-            <div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M17 11a3 3 0 0 0 0-6"></path><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path></svg></div><div><strong>Staff questions</strong><span>The answers your team keeps coming back to you for.</span></div></div>
-          </div>
-
-          <div class="mobile-slide">
-            <div class="slide-mockup">
-              <div class="slide-eyebrow">Featured example</div>
-              <div class="slide-title">Messy process</div>
-              <p class="slide-copy">Map the inconsistent task and create a cleaner repeatable path.</p>
-              <div class="slide-output">
-                <div class="slide-output-row"><span>Before</span><strong>Nobody follows it the same way twice.</strong></div>
-                <div class="slide-output-row"><span>After</span><strong>Step-by-step process with AI support.</strong></div>
-              </div>
-            </div>
-            <div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M6 4h12v6H6z"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path></svg></div><div><strong>Messy process</strong><span>A task nobody follows the same way twice.</span></div></div>
-          </div>
-
-          <div class="mobile-slide">
-            <div class="slide-mockup">
-              <div class="slide-eyebrow">Featured example</div>
-              <div class="slide-title">Buried document</div>
-              <p class="slide-copy">Turn manuals, policies, and notes into answers you can actually find.</p>
-              <div class="slide-output">
-                <div class="slide-output-row"><span>Before</span><strong>Knowledge is trapped in pages nobody reads.</strong></div>
-                <div class="slide-output-row"><span>After</span><strong>Searchable answers + next-step guide.</strong></div>
-              </div>
-            </div>
-            <div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h5"></path><path d="M9 12h6"></path><path d="M9 16h6"></path></svg></div><div><strong>Buried document</strong><span>A manual, policy, note, or SOP nobody wants to dig through.</span></div></div>
-          </div>
-
-          <div class="mobile-slide">
-            <div class="slide-mockup">
-              <div class="slide-eyebrow">Featured example</div>
-              <div class="slide-title">Research task</div>
-              <p class="slide-copy">Turn too much information into a clearer recommendation and next step.</p>
-              <div class="slide-output">
-                <div class="slide-output-row"><span>Before</span><strong>You avoid the decision because there’s too much to sort.</strong></div>
-                <div class="slide-output-row"><span>After</span><strong>Summary + comparison + recommendation.</strong></div>
-              </div>
-            </div>
-            <div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5L21 21"></path></svg></div><div><strong>Research task</strong><span>A decision you keep avoiding because there is too much to sort through.</span></div></div>
-          </div>
+          <div class="mobile-slide"><div class="slide-mockup"><div class="slide-eyebrow">Featured example</div><div class="slide-title">Customer follow-up</div><p class="slide-copy">Build a reusable reply process for repeated customer questions.</p><div class="slide-output"><div class="slide-output-row"><span>Before</span><strong>You start from scratch every time.</strong></div><div class="slide-output-row"><span>After</span><strong>Reply template + checklist + next step.</strong></div></div></div><div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></div><div><strong>Customer follow-up</strong><span>Repeated replies, quotes, next-step emails, and customer questions.</span></div></div></div>
+          <div class="mobile-slide"><div class="slide-mockup"><div class="slide-eyebrow">Featured example</div><div class="slide-title">Staff questions</div><p class="slide-copy">Turn repeated answers into something your team can use.</p><div class="slide-output"><div class="slide-output-row"><span>Before</span><strong>Your team keeps coming back to you.</strong></div><div class="slide-output-row"><span>After</span><strong>Answer bank + simple internal process.</strong></div></div></div><div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M17 11a3 3 0 0 0 0-6"></path><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path></svg></div><div><strong>Staff questions</strong><span>The answers your team keeps coming back to you for.</span></div></div></div>
+          <div class="mobile-slide"><div class="slide-mockup"><div class="slide-eyebrow">Featured example</div><div class="slide-title">Messy process</div><p class="slide-copy">Map the inconsistent task and create a cleaner repeatable path.</p><div class="slide-output"><div class="slide-output-row"><span>Before</span><strong>Nobody follows it the same way twice.</strong></div><div class="slide-output-row"><span>After</span><strong>Step-by-step process with AI support.</strong></div></div></div><div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M6 4h12v6H6z"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path></svg></div><div><strong>Messy process</strong><span>A task nobody follows the same way twice.</span></div></div></div>
+          <div class="mobile-slide"><div class="slide-mockup"><div class="slide-eyebrow">Featured example</div><div class="slide-title">Buried document</div><p class="slide-copy">Turn manuals, policies, and notes into answers you can actually find.</p><div class="slide-output"><div class="slide-output-row"><span>Before</span><strong>Knowledge is trapped in pages nobody reads.</strong></div><div class="slide-output-row"><span>After</span><strong>Searchable answers + next-step guide.</strong></div></div></div><div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h5"></path><path d="M9 12h6"></path><path d="M9 16h6"></path></svg></div><div><strong>Buried document</strong><span>A manual, policy, note, or SOP nobody wants to dig through.</span></div></div></div>
+          <div class="mobile-slide"><div class="slide-mockup"><div class="slide-eyebrow">Featured example</div><div class="slide-title">Research task</div><p class="slide-copy">Turn too much information into a clearer recommendation and next step.</p><div class="slide-output"><div class="slide-output-row"><span>Before</span><strong>You avoid the decision because there’s too much to sort.</strong></div><div class="slide-output-row"><span>After</span><strong>Summary + comparison + recommendation.</strong></div></div></div><div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5L21 21"></path></svg></div><div><strong>Research task</strong><span>A decision you keep avoiding because there is too much to sort through.</span></div></div></div>
         </div>
       </div>
     </section>
 
-    <section class="leave-section">
+    <section class="leave-section" id="register">
       <div class="container">
-        <div class="section-kicker">What you leave with</div>
-        <h2>A simple first version, not another pile of ideas.</h2>
-
-        <div class="leave-grid">
-          <div class="leave-card">
-            <div class="check-icon">
-              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
-            </div>
-            <p>One task clarified</p>
+        <div class="leave-panel">
+          <div>
+            <div class="section-kicker">What you get</div>
+            <h2>Save your seat and bring one task.</h2>
+            <p class="section-copy">
+              You’ll get the live 90-minute workshop, replay access, worksheet, and prompt library. Seats are capped at 20 so people can get help on real business tasks.
+            </p>
+            <div class="leave-cta"><a href="#" class="button">Save My Seat</a></div>
+            <p class="leave-note">$39 early bird. $57 regular.</p>
           </div>
 
-          <div class="leave-card">
-            <div class="check-icon">
-              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
-            </div>
-            <p>One process started</p>
-          </div>
-
-          <div class="leave-card">
-            <div class="check-icon">
-              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
-            </div>
-            <p>AI workflow worksheet</p>
-          </div>
-
-          <div class="leave-card">
-            <div class="check-icon">
-              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
-            </div>
-            <p>Prompt/template library</p>
-          </div>
-
-          <div class="leave-card">
-            <div class="check-icon">
-              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
-            </div>
-            <p>Replay included</p>
+          <div class="leave-grid">
+            <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>Live 90-minute workshop</p></div>
+            <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>One task clarified</p></div>
+            <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>One process started</p></div>
+            <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>AI workflow worksheet</p></div>
+            <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>Prompt/template library</p></div>
+            <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>Replay included</p></div>
           </div>
         </div>
       </div>
@@ -1273,32 +852,14 @@
       <div class="container">
         <div class="karsten-card">
           <div class="portrait" aria-label="Placeholder for Karsten photo"></div>
-
           <div>
             <div class="section-kicker">About Karsten</div>
             <h2>Karsten translates AI into practical business use.</h2>
-
-            <p>
-              In the workshop, Karsten will show how a messy task, like a manual, customer question, repeated process, or internal knowledge gap, can become something easier to search, understand, and act on.
-            </p>
-
-            <p>
-              Add one real example here from Karsten, such as a water heater issue, farm manual, equipment label, customer support process, or task he fixed with AI in minutes.
-            </p>
-
-            <p>
-              No jargon. No tool overload. Just one practical use case you can understand and repeat.
-            </p>
+            <p>In the workshop, Karsten will show how a messy task, like a manual, customer question, repeated process, or internal knowledge gap, can become something easier to search, understand, and act on.</p>
+            <p>He has used AI to turn messy manuals, photos, and process notes into step-by-step instructions people can actually follow. In this workshop, he’ll show the same practical approach on real business tasks from participants.</p>
+            <p>No jargon. No tool overload. Just one practical use case you can understand and repeat.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="cta-section" id="register">
-      <div class="container">
-        <h2>Capped at 20 people.</h2>
-        <p>$39 early bird. $57 regular. Small group so people can get help on real business tasks.</p>
-        <a href="#" class="button">Save My Seat</a>
       </div>
     </section>
 
@@ -1307,100 +868,29 @@
         <div>
           <div class="section-kicker">Questions</div>
           <h2>For the owner who is interested but skeptical.</h2>
-          <p class="section-copy">
-            You do not need to become technical. You need one task worth improving.
-          </p>
+          <p class="section-copy">You do not need to become technical. You need one task worth improving.</p>
         </div>
-
         <div class="faq-list">
-          <details>
-            <summary>Do I need to know how to code?</summary>
-            <p>No. This is for business owners, not developers.</p>
-          </details>
-
-          <details>
-            <summary>What kind of task should I bring?</summary>
-            <p>Bring anything repetitive, confusing, slow, messy, or mentally draining. Customer follow-up, staff questions, research, documents, admin, planning, or troubleshooting all work.</p>
-          </details>
-
-          <details>
-            <summary>What if I have tried AI and it was not helpful?</summary>
-            <p>That is common. Most people get weak results because they do not know where AI fits or what context to give it. This workshop helps you apply it to a real business problem.</p>
-          </details>
-
-          <details>
-            <summary>Do I need to bring private business information?</summary>
-            <p>No. Bring the shape of the task, not sensitive customer data, passwords, financial records, or private internal information.</p>
-          </details>
-
-          <details>
-            <summary>What is included?</summary>
-            <p>You get the live workshop, replay access, an AI workflow worksheet, and a prompt/template library you can keep using after the session.</p>
-          </details>
-
-          <details>
-            <summary>What will I leave with?</summary>
-            <p>You will leave with one task clarified, one AI-assisted process started, and a clearer next step for using AI in your business.</p>
-          </details>
+          <details><summary>Do I need to know how to code?</summary><p>No. This is for business owners, not developers.</p></details>
+          <details><summary>What kind of task should I bring?</summary><p>Bring anything repetitive, confusing, slow, messy, or mentally draining. Customer follow-up, staff questions, research, documents, admin, planning, or troubleshooting all work.</p></details>
+          <details><summary>Do I need to bring private business information?</summary><p>No. Bring the shape of the task, not sensitive customer data, passwords, financial records, or private internal information.</p></details>
+          <details><summary>What will I leave with?</summary><p>You will leave with one task clarified, one AI-assisted process started, and a clearer next step for using AI in your business.</p></details>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="container">
-        Practical AI for real business problems.
-      </div>
+      <div class="container">Practical AI for real business problems.</div>
     </footer>
-
   </div>
 
   <script>
     const slides = {
-      followup: {
-        title: "Customer follow-up you keep rewriting",
-        copy: "A customer asks about pricing, availability, or next steps. Instead of starting over every time, you build a reusable reply process.",
-        before: "You start from scratch every time.",
-        during: "Map the repeated situation and create a reusable AI-assisted reply flow.",
-        after: "You have a draft response, follow-up checklist, and next question to ask.",
-        prompt: "“Turn this customer question into a reusable reply workflow.”",
-        output: "Reply template + checklist + next step"
-      },
-      staff: {
-        title: "Staff questions you answer over and over",
-        copy: "Your team keeps coming back to you for the same answers. You start turning those answers into a reusable internal support process.",
-        before: "Important answers live in your head.",
-        during: "Capture the repeated questions and turn them into a searchable answer bank.",
-        after: "Your team has a clearer place to start before interrupting you.",
-        prompt: "“Turn these repeated staff questions into an internal answer guide.”",
-        output: "Answer bank + internal checklist + handoff notes"
-      },
-      process: {
-        title: "A process nobody follows consistently",
-        copy: "The task technically exists, but everyone handles it differently. You map the messy version and create a cleaner repeatable path.",
-        before: "Nobody follows the task the same way twice.",
-        during: "Break the process into clear steps and identify where AI can help.",
-        after: "You leave with a cleaner first version your team can repeat.",
-        prompt: "“Turn this messy process into a simple step-by-step workflow.”",
-        output: "Process map + checklist + AI support points"
-      },
-      document: {
-        title: "A document nobody wants to dig through",
-        copy: "Manuals, policies, notes, and SOPs can become more usable when AI helps surface the answer and next step.",
-        before: "Useful information is buried in pages nobody reads.",
-        during: "Use AI to summarize, organize, and turn the document into practical answers.",
-        after: "You can find the right answer faster and act on it.",
-        prompt: "“Turn this document into a quick-answer guide for my team.”",
-        output: "Searchable guide + summary + next-step checklist"
-      },
-      research: {
-        title: "A decision or research task you keep avoiding",
-        copy: "When there is too much information to sort through, AI can help compare options, summarize tradeoffs, and clarify your next step.",
-        before: "You avoid the decision because there is too much to sort through.",
-        during: "Gather the inputs and have AI organize the tradeoffs.",
-        after: "You leave with a clearer recommendation and next step.",
-        prompt: "“Compare these options and give me a practical recommendation.”",
-        output: "Summary + comparison table + recommendation"
-      }
+      followup: { title: "Customer follow-up you keep rewriting", copy: "A customer asks about pricing, availability, or next steps. Instead of starting over every time, you build a reusable reply process.", before: "You start from scratch every time.", during: "Map the repeated situation and create a reusable AI-assisted reply flow.", after: "You have a draft response, follow-up checklist, and next question to ask.", prompt: "“Turn this customer question into a reusable reply workflow.”", output: "Reply template + checklist + next step" },
+      staff: { title: "Staff questions you answer over and over", copy: "Your team keeps coming back to you for the same answers. You start turning those answers into a reusable internal support process.", before: "Important answers live in your head.", during: "Capture the repeated questions and turn them into a searchable answer bank.", after: "Your team has a clearer place to start before interrupting you.", prompt: "“Turn these repeated staff questions into an internal answer guide.”", output: "Answer bank + internal checklist + handoff notes" },
+      process: { title: "A process nobody follows consistently", copy: "The task technically exists, but everyone handles it differently. You map the messy version and create a cleaner repeatable path.", before: "Nobody follows the task the same way twice.", during: "Break the process into clear steps and identify where AI can help.", after: "You leave with a cleaner first version your team can repeat.", prompt: "“Turn this messy process into a simple step-by-step workflow.”", output: "Process map + checklist + AI support points" },
+      document: { title: "A document nobody wants to dig through", copy: "Manuals, policies, notes, and SOPs can become more usable when AI helps surface the answer and next step.", before: "Useful information is buried in pages nobody reads.", during: "Use AI to summarize, organize, and turn the document into practical answers.", after: "You can find the right answer faster and act on it.", prompt: "“Turn this document into a quick-answer guide for my team.”", output: "Searchable guide + summary + next-step checklist" },
+      research: { title: "A decision or research task you keep avoiding", copy: "When there is too much information to sort through, AI can help compare options, summarize tradeoffs, and clarify your next step.", before: "You avoid the decision because there is too much to sort through.", during: "Gather the inputs and have AI organize the tradeoffs.", after: "You leave with a clearer recommendation and next step.", prompt: "“Compare these options and give me a practical recommendation.”", output: "Summary + comparison table + recommendation" }
     };
 
     const options = document.querySelectorAll("[data-slide]");
@@ -1414,9 +904,7 @@
 
     options.forEach((option) => {
       option.addEventListener("click", () => {
-        const key = option.dataset.slide;
-        const slide = slides[key];
-
+        const slide = slides[option.dataset.slide];
         title.textContent = slide.title;
         copy.textContent = slide.copy;
         before.textContent = slide.before;
@@ -1424,7 +912,6 @@
         after.textContent = slide.after;
         promptText.textContent = slide.prompt;
         output.textContent = slide.output;
-
         options.forEach((item) => item.classList.remove("active"));
         option.classList.add("active");
       });
