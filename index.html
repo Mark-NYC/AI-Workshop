@@ -356,6 +356,9 @@
     }
 
     .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 10px 13px;
       border-radius: 999px;
       background: var(--green-soft);
@@ -363,6 +366,17 @@
       font-size: 14px;
       font-weight: 900;
       letter-spacing: -0.02em;
+    }
+
+    .chip svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex: 0 0 auto;
     }
 
     .karsten { background: var(--white); }
@@ -622,7 +636,8 @@
 
       .chip {
         border-radius: 16px;
-        text-align: center;
+        justify-content: flex-start;
+        text-align: left;
       }
 
       .portrait {
@@ -762,11 +777,26 @@
             Customer follow-up, staff questions, messy processes, buried documents, or research tasks.
           </p>
           <div class="chips">
-            <div class="chip">Customer follow-up</div>
-            <div class="chip">Staff questions</div>
-            <div class="chip">Messy process</div>
-            <div class="chip">Buried document</div>
-            <div class="chip">Research task</div>
+            <div class="chip">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg>
+              <span>Customer follow-up</span>
+            </div>
+            <div class="chip">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M17 11a3 3 0 0 0 0-6"></path><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path></svg>
+              <span>Staff questions</span>
+            </div>
+            <div class="chip">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v6H6z"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path></svg>
+              <span>Messy process</span>
+            </div>
+            <div class="chip">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h5"></path><path d="M9 12h6"></path><path d="M9 16h6"></path></svg>
+              <span>Buried document</span>
+            </div>
+            <div class="chip">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5L21 21"></path></svg>
+              <span>Research task</span>
+            </div>
           </div>
         </div>
       </div>
