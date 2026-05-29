@@ -271,22 +271,22 @@
 
     .inside-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 42px;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 54px;
       align-items: center;
     }
 
     .inside-copy {
-      padding: 34px;
-      border-radius: 30px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.13);
+      padding: 0;
+      background: transparent;
+      border: 0;
     }
 
     .inside-copy p {
-      color: rgba(255,255,255,0.68);
-      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+      font-size: 19px;
       margin-bottom: 0;
+      max-width: 520px;
     }
 
     .inside-prompt-wrap {
@@ -311,35 +311,48 @@
       text-align: center;
     }
 
-    .inside-steps {
+    .simple-steps {
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 26px;
+      gap: 12px;
+      max-width: 520px;
     }
 
-    .inside-step {
-      padding: 18px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.13);
-    }
-
-    .icon-box {
-      display: inline-flex;
-      width: 44px;
-      height: 44px;
-      border-radius: 15px;
+    .simple-steps li {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
       align-items: center;
-      justify-content: center;
-      background: var(--green-soft);
-      color: var(--teal-dark);
-      margin-bottom: 14px;
+      color: rgba(255,255,255,0.82);
+      font-size: 17px;
+      font-weight: 850;
+      letter-spacing: -0.035em;
     }
 
-    .inside-step .icon-box {
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
       background: rgba(41,230,197,0.14);
       color: var(--teal);
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .included-line {
+      margin-top: 28px;
+      color: rgba(255,255,255,0.68);
+      font-size: 15px;
+      font-weight: 750;
+    }
+
+    .included-line strong {
+      color: var(--white);
     }
 
     .icon-box svg,
@@ -351,43 +364,6 @@
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
-    }
-
-    .inside-step p {
-      margin: 0;
-      color: rgba(255,255,255,0.78);
-      font-weight: 800;
-      letter-spacing: -0.035em;
-      font-size: 15px;
-    }
-
-    .leave-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-top: 24px;
-    }
-
-    .leave-list-item {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      color: rgba(255,255,255,0.74);
-      font-size: 14px;
-      font-weight: 750;
-    }
-
-    .tiny-check {
-      width: 22px;
-      height: 22px;
-      border-radius: 8px;
-      background: rgba(41,230,197,0.14);
-      color: var(--teal);
-      display: grid;
-      place-items: center;
-      font-size: 13px;
-      font-weight: 900;
-      flex: 0 0 auto;
     }
 
     .example {
@@ -626,10 +602,7 @@
         padding: 22px;
       }
 
-      .inside-steps,
-      .leave-list {
-        grid-template-columns: 1fr;
-      }
+
 
       .prompt-example-image {
         width: 100%;
@@ -728,51 +701,21 @@
       <div class="container inside-grid">
         <div class="inside-copy">
           <div class="section-kicker">Inside the 90 minutes</div>
-          <h2>What you’ll actually do</h2>
+          <h2>Turn one task into a repeatable process.</h2>
           <p>
-            You’ll use a simple prompt like this to turn one repeated task into a process you can reuse.
-          </p>
-          <p>
-            Bring one real task from your business. We’ll help you break down what happens now and use AI to build a clearer first version.
+            Bring one real task from your business. We’ll help you turn it into a prompt and process you can reuse.
           </p>
 
-          <div class="inside-steps">
-            <div class="inside-step">
-              <div class="icon-box">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
-              </div>
-              <p>Pick the task costing you time</p>
-            </div>
+          <ol class="simple-steps">
+            <li><span class="step-number">1</span><span>Pick the task</span></li>
+            <li><span class="step-number">2</span><span>Fill in the prompt</span></li>
+            <li><span class="step-number">3</span><span>Build the first version</span></li>
+            <li><span class="step-number">4</span><span>Leave with the next step</span></li>
+          </ol>
 
-            <div class="inside-step">
-              <div class="icon-box">
-                <svg viewBox="0 0 24 24"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg>
-              </div>
-              <p>Break down what happens now</p>
-            </div>
-
-            <div class="inside-step">
-              <div class="icon-box">
-                <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z"></path></svg>
-              </div>
-              <p>Use AI to build a clearer first version</p>
-            </div>
-
-            <div class="inside-step">
-              <div class="icon-box">
-                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
-              </div>
-              <p>Leave with reusable prompts and a next step</p>
-            </div>
-          </div>
-
-          <div class="leave-list">
-            <div class="leave-list-item"><span class="tiny-check">✓</span>One task clarified</div>
-            <div class="leave-list-item"><span class="tiny-check">✓</span>One process started</div>
-            <div class="leave-list-item"><span class="tiny-check">✓</span>AI workflow worksheet</div>
-            <div class="leave-list-item"><span class="tiny-check">✓</span>Prompt/template library</div>
-            <div class="leave-list-item"><span class="tiny-check">✓</span>Replay access</div>
-          </div>
+          <p class="included-line">
+            Includes <strong>worksheet</strong>, <strong>prompt library</strong>, and <strong>replay</strong>.
+          </p>
         </div>
 
         <div class="inside-prompt-wrap">
