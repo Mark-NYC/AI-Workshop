@@ -271,9 +271,9 @@
 
     .inside-grid {
       display: grid;
-      grid-template-columns: 0.86fr 1.14fr;
-      gap: 34px;
-      align-items: start;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 42px;
+      align-items: center;
     }
 
     .inside-copy {
@@ -289,29 +289,52 @@
       margin-bottom: 0;
     }
 
+    .inside-prompt-wrap {
+      display: grid;
+      justify-items: center;
+      gap: 14px;
+    }
+
+    .prompt-example-image {
+      width: min(100%, 420px);
+      height: auto;
+      display: block;
+      border-radius: 34px;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.36);
+    }
+
+    .prompt-caption {
+      max-width: 420px;
+      margin: 0;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      text-align: center;
+    }
+
     .inside-steps {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
+      margin-top: 26px;
     }
 
     .inside-step {
-      padding: 22px;
-      border-radius: 24px;
+      padding: 18px;
+      border-radius: 22px;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.13);
     }
 
     .icon-box {
       display: inline-flex;
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
       align-items: center;
       justify-content: center;
       background: var(--green-soft);
       color: var(--teal-dark);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .inside-step .icon-box {
@@ -335,6 +358,7 @@
       color: rgba(255,255,255,0.78);
       font-weight: 800;
       letter-spacing: -0.035em;
+      font-size: 15px;
     }
 
     .leave-list {
@@ -565,8 +589,12 @@
         justify-self: stretch;
       }
 
-      .inside-steps {
-        grid-template-columns: repeat(2, 1fr);
+      .inside-prompt-wrap {
+        order: -1;
+      }
+
+      .prompt-example-image {
+        width: min(100%, 380px);
       }
 
       .portrait {
@@ -601,6 +629,11 @@
       .inside-steps,
       .leave-list {
         grid-template-columns: 1fr;
+      }
+
+      .prompt-example-image {
+        width: 100%;
+        border-radius: 28px;
       }
 
       .example-step {
@@ -697,8 +730,41 @@
           <div class="section-kicker">Inside the 90 minutes</div>
           <h2>What you’ll actually do</h2>
           <p>
-            You’ll bring one real task from your business, break down what happens now, and use AI to build a clearer first version.
+            You’ll use a simple prompt like this to turn one repeated task into a process you can reuse.
           </p>
+          <p>
+            Bring one real task from your business. We’ll help you break down what happens now and use AI to build a clearer first version.
+          </p>
+
+          <div class="inside-steps">
+            <div class="inside-step">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
+              </div>
+              <p>Pick the task costing you time</p>
+            </div>
+
+            <div class="inside-step">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg>
+              </div>
+              <p>Break down what happens now</p>
+            </div>
+
+            <div class="inside-step">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z"></path></svg>
+              </div>
+              <p>Use AI to build a clearer first version</p>
+            </div>
+
+            <div class="inside-step">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+              </div>
+              <p>Leave with reusable prompts and a next step</p>
+            </div>
+          </div>
 
           <div class="leave-list">
             <div class="leave-list-item"><span class="tiny-check">✓</span>One task clarified</div>
@@ -709,34 +775,15 @@
           </div>
         </div>
 
-        <div class="inside-steps">
-          <div class="inside-step">
-            <div class="icon-box">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
-            </div>
-            <p>Pick the task costing you time</p>
-          </div>
-
-          <div class="inside-step">
-            <div class="icon-box">
-              <svg viewBox="0 0 24 24"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg>
-            </div>
-            <p>Break down what happens now</p>
-          </div>
-
-          <div class="inside-step">
-            <div class="icon-box">
-              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z"></path></svg>
-            </div>
-            <p>Use AI to build a clearer first version</p>
-          </div>
-
-          <div class="inside-step">
-            <div class="icon-box">
-              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
-            </div>
-            <p>Leave with reusable prompts and a next step</p>
-          </div>
+        <div class="inside-prompt-wrap">
+          <img
+            src="images/claude-prompt-example.webp"
+            alt="Example Claude prompt for turning a repeated business task into a reusable process"
+            class="prompt-example-image"
+          />
+          <p class="prompt-caption">
+            Example: turning repeated quote questions into a reusable process.
+          </p>
         </div>
       </div>
     </section>
