@@ -3,121 +3,952 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>AI Workshop for Business Owners</title>
-  <meta name="description" content="Bring one task that keeps slowing you down. Leave with one recurring business task partially handled before the workshop ends." />
+  <meta name="description" content="Bring one task that keeps slowing you down. Leave with a faster AI-assisted way to handle it before the workshop ends." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
-    :root{--navy:#07111f;--ink:#0d1726;--muted:#64748b;--white:#fff;--off:#f8fafc;--line:#dbe3ef;--teal:#29e6c5;--teal-dark:#0f766e;--blue:#38bdf8;--green-soft:#dffcf7;--shadow:0 24px 70px rgba(15,23,42,.16);--shadow-soft:0 14px 40px rgba(15,23,42,.07);--radius:28px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--off);line-height:1.5}a{color:inherit;text-decoration:none}.page{overflow:hidden}.container{width:min(1080px,calc(100% - 40px));margin:0 auto}h1,h2,h3,p{margin-top:0}h1{margin-bottom:22px;font-size:clamp(44px,7vw,76px);line-height:.94;letter-spacing:-.078em;font-weight:900}h2{margin-bottom:18px;font-size:clamp(34px,4.5vw,56px);line-height:1;letter-spacing:-.07em}h3{margin-bottom:8px;font-size:23px;line-height:1.08;letter-spacing:-.055em}.hero{color:var(--white);background:radial-gradient(circle at 16% 20%,rgba(41,230,197,.24),transparent 30%),radial-gradient(circle at 88% 12%,rgba(56,189,248,.18),transparent 28%),linear-gradient(135deg,#07111f 0%,#08182d 54%,#0f172a 100%);padding:92px 0 76px}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:52px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.13);color:rgba(255,255,255,.82);font-size:13px;font-weight:800;margin-bottom:22px}.eyebrow-dot{width:8px;height:8px;border-radius:999px;background:var(--teal);box-shadow:0 0 20px rgba(41,230,197,.8)}.hero-sub{max-width:680px;margin-bottom:20px;font-size:clamp(19px,2vw,23px);color:rgba(255,255,255,.78);letter-spacing:-.02em}.hero-meta{margin:0 0 26px;color:rgba(255,255,255,.72);font-weight:800;font-size:16px}.hero-note{margin-top:18px;color:rgba(255,255,255,.62);font-size:14px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 24px;border-radius:999px;background:var(--teal);color:#06201d;font-weight:900;letter-spacing:-.02em;box-shadow:0 18px 50px rgba(41,230,197,.26);transition:transform .18s ease}.button:hover{transform:translateY(-2px)}.visual-shell{position:relative;min-height:520px;padding:22px;border-radius:34px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);box-shadow:0 28px 90px rgba(0,0,0,.34);backdrop-filter:blur(18px)}.screenshot-stack{position:relative;min-height:470px}.mock-card{position:absolute;width:88%;border-radius:22px;overflow:hidden;background:var(--white);color:var(--ink);border:1px solid rgba(226,232,240,.9);box-shadow:0 22px 60px rgba(0,0,0,.22)}.mock-card.one{top:0;left:0;z-index:3}.mock-card.two{top:138px;right:0;z-index:2}.mock-card.three{bottom:0;left:30px;z-index:1;width:82%}.mock-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background:#f8fafc;border-bottom:1px solid #e2e8f0}.mock-dots{display:flex;gap:6px}.mock-dots span{width:9px;height:9px;border-radius:999px;background:#cbd5e1}.mock-label{color:#64748b;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.mock-body{padding:16px}.prompt-box{padding:13px;border-radius:14px;background:#f1f5f9;color:#334155;font-size:13px;font-weight:700;line-height:1.35;margin-bottom:12px}.result-list{display:grid;gap:8px}.result-line{display:flex;align-items:center;gap:8px;color:#475569;font-size:12px;font-weight:700}.tiny-check{width:18px;height:18px;border-radius:7px;background:var(--green-soft);color:var(--teal-dark);display:grid;place-items:center;flex:0 0 auto;font-size:12px;font-weight:900}.worksheet-grid{display:grid;gap:9px}.worksheet-row{display:grid;grid-template-columns:88px 1fr;gap:10px;padding:10px;border-radius:12px;background:#f8fafc;border:1px solid #e2e8f0;font-size:12px}.worksheet-row strong{color:#0f172a}.worksheet-row span{color:#64748b}.zoom-placeholder{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;padding:14px;border-radius:16px;background:#f8fafc;border:1px solid #e2e8f0}.avatar{width:44px;height:44px;border-radius:16px;background:linear-gradient(135deg,var(--teal),var(--blue))}.zoom-placeholder strong{display:block;font-size:13px;letter-spacing:-.03em}.zoom-placeholder span{display:block;margin-top:2px;color:#64748b;font-size:12px;font-weight:700}section{padding:64px 0}.section-kicker{color:var(--teal-dark);font-weight:900;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}.section-copy{max-width:720px;color:var(--muted);font-size:18px;margin-bottom:0}.objections{margin-top:-32px;position:relative;z-index:5;padding:0 0 56px}.objection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.objection-card{padding:22px;border-radius:24px;background:var(--white);border:1px solid #e2e8f0;box-shadow:var(--shadow)}.objection-card h3{font-size:20px;margin-bottom:7px}.objection-card p{margin:0;color:var(--muted);font-size:15px}.problem{background:var(--off);padding-top:24px}.bullet-stack{display:grid;gap:14px}.bullet-card{display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;padding:22px;border-radius:22px;background:var(--white);border:1px solid #e2e8f0;box-shadow:var(--shadow-soft)}.check{width:38px;height:38px;border-radius:14px;background:var(--green-soft);color:var(--teal-dark);display:grid;place-items:center;font-weight:900}.bullet-card p{margin:0;font-size:18px;letter-spacing:-.025em;color:#334155}.promise{background:var(--white)}.promise-panel{padding:38px;border-radius:36px;background:radial-gradient(circle at 90% 10%,rgba(41,230,197,.18),transparent 34%),var(--ink);color:var(--white);box-shadow:var(--shadow)}.promise-panel p{max-width:760px;color:rgba(255,255,255,.7);font-size:19px;margin-bottom:0}.promise-panel p+p{margin-top:18px}.case-study{background:var(--off)}.case-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center;padding:38px;border-radius:36px;background:radial-gradient(circle at 8% 15%,rgba(41,230,197,.13),transparent 28%),linear-gradient(135deg,#07111f,#0d1b2d);color:var(--white);box-shadow:var(--shadow)}.case-card p{color:rgba(255,255,255,.68);font-size:18px}.case-visual{display:grid;gap:12px}.case-step{padding:18px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13)}.case-step span{display:inline-block;margin-bottom:8px;color:var(--teal);font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.case-step strong{display:block;color:var(--white);font-size:17px;letter-spacing:-.03em}.task-section{background:var(--white)}.session-flow{background:var(--off)}.leave-section{background:var(--white)}.task-grid,.session-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}.leave-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:34px}.task-card,.session-card{padding:22px;min-height:150px;border-radius:var(--radius);background:var(--white);border:1px solid #e2e8f0;box-shadow:var(--shadow-soft)}.task-card .card-icon,.session-card .card-icon{display:inline-flex;width:48px;height:48px;border-radius:16px;align-items:center;justify-content:center;background:var(--green-soft);color:var(--teal-dark);margin-bottom:16px}.card-icon svg,.check-icon svg{width:22px;height:22px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}.task-card p,.session-card p{margin:0;font-weight:800;letter-spacing:-.035em;color:#1e293b}.leave-card{display:flex;align-items:center;gap:10px;padding:16px 18px;border-radius:18px;background:var(--off);border:1px solid #e2e8f0}.check-icon{width:28px;height:28px;border-radius:10px;background:var(--green-soft);color:var(--teal-dark);display:grid;place-items:center;flex:0 0 auto}.leave-card p{margin:0;font-weight:850;font-size:15px;line-height:1.15;letter-spacing:-.035em;color:#1e293b}.karsten{background:var(--off)}.karsten-card{display:grid;grid-template-columns:.8fr 1.2fr;gap:32px;align-items:center;padding:34px;border-radius:36px;background:var(--white);border:1px solid #e2e8f0;box-shadow:var(--shadow)}.portrait{min-height:360px;border-radius:28px;background:linear-gradient(135deg,rgba(41,230,197,.84),rgba(56,189,248,.78)),linear-gradient(135deg,#0f172a,#1e293b);position:relative;overflow:hidden}.portrait:before{content:"Karsten";position:absolute;left:28px;bottom:24px;color:rgba(255,255,255,.94);font-size:54px;line-height:.9;font-weight:900;letter-spacing:-.08em}.karsten-card p{color:var(--muted);font-size:18px}.cta-section{padding:76px 0;color:var(--white);text-align:center;background:radial-gradient(circle at 20% 20%,rgba(41,230,197,.18),transparent 35%),linear-gradient(135deg,#07111f,#0f172a)}.cta-section h2{max-width:760px;margin:0 auto 18px}.cta-section p{color:rgba(255,255,255,.7);font-size:18px;margin-bottom:28px}.faq{background:var(--off)}.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:34px;align-items:start}.faq-list{display:grid;gap:12px}details{padding:20px 22px;border-radius:22px;background:var(--white);border:1px solid #e2e8f0;box-shadow:var(--shadow-soft)}summary{cursor:pointer;font-weight:900;letter-spacing:-.03em}details p{margin:12px 0 0;color:var(--muted)}.footer{padding:24px 0;background:#050b14;color:rgba(255,255,255,.55);font-size:14px;text-align:center}@media(max-width:980px){.hero-grid,.case-card,.karsten-card,.faq-grid{grid-template-columns:1fr}.visual-shell{min-height:auto}.screenshot-stack{min-height:620px}.mock-card{width:100%}.mock-card.one{top:0;left:0}.mock-card.two{top:205px;right:0}.mock-card.three{top:420px;bottom:auto;left:0;width:100%}.objection-grid,.task-grid,.session-grid{grid-template-columns:repeat(2,1fr)}.leave-grid{grid-template-columns:repeat(2,1fr)}.portrait{min-height:300px}}@media(max-width:640px){.container{width:min(100% - 28px,1080px)}.hero{padding:72px 0 56px}section{padding:52px 0}.button{width:100%}.objection-grid,.task-grid,.session-grid,.leave-grid{grid-template-columns:1fr}.visual-shell,.promise-panel,.case-card,.karsten-card{padding:22px}.screenshot-stack{min-height:670px}.mock-card.two{top:225px}.mock-card.three{top:465px}.task-card,.session-card{min-height:auto}}
-  
+    :root {
+      --navy: #07111f;
+      --ink: #0d1726;
+      --muted: #64748b;
+      --white: #ffffff;
+      --off: #f8fafc;
+      --line: #dbe3ef;
+      --teal: #29e6c5;
+      --teal-dark: #0f766e;
+      --blue: #38bdf8;
+      --green-soft: #dffcf7;
+      --shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
+      --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.07);
+      --radius: 28px;
+    }
 
-/* Task slider placeholder section */
-.task-grid{display:none!important}
-.task-slider{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch;margin-top:34px}
-.slide-mockup{position:relative;overflow:hidden;min-height:440px;border-radius:34px;background:radial-gradient(circle at 18% 10%,rgba(41,230,197,.16),transparent 28%),linear-gradient(135deg,#07111f,#0d1b2d);color:var(--white);box-shadow:var(--shadow);padding:26px}
-.slide-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border-radius:999px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.13);color:rgba(255,255,255,.78);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
-.slide-title{max-width:460px;margin-bottom:14px;font-size:clamp(30px,4vw,50px);line-height:.98;letter-spacing:-.07em;font-weight:900}
-.slide-copy{max-width:460px;color:rgba(255,255,255,.68);font-size:17px;margin-bottom:26px}
-.slide-output{display:grid;gap:12px;margin-top:28px}
-.slide-output-row{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:start;padding:14px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13)}
-.slide-output-row span{color:var(--teal);font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
-.slide-output-row strong{display:block;color:var(--white);font-size:15px;letter-spacing:-.03em}
-.slide-card-stack{position:absolute;right:-24px;bottom:-24px;width:min(320px,48%);display:grid;gap:10px;transform:rotate(-3deg)}
-.mini-slide-card{padding:14px;border-radius:18px;background:var(--white);color:var(--ink);box-shadow:0 16px 40px rgba(0,0,0,.22);border:1px solid rgba(226,232,240,.9)}
-.mini-slide-card small{display:block;color:var(--teal-dark);font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
-.mini-slide-card strong{display:block;font-size:13px;line-height:1.15;letter-spacing:-.03em}
-.slide-nav{display:grid;gap:12px}
-.slide-option{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;padding:18px;border-radius:22px;background:var(--off);border:1px solid #e2e8f0;box-shadow:var(--shadow-soft)}
-.slide-option.active{background:var(--white);border-color:rgba(15,118,110,.28);box-shadow:var(--shadow)}
-.slide-option .card-icon{display:inline-flex;width:48px;height:48px;border-radius:16px;align-items:center;justify-content:center;background:var(--green-soft);color:var(--teal-dark);margin:0}
-.slide-option strong{display:block;font-size:17px;letter-spacing:-.04em;color:#0f172a;margin-bottom:2px}
-.slide-option span{display:block;color:var(--muted);font-size:13px;font-weight:650;line-height:1.3}
-@media(max-width:980px){.task-slider{grid-template-columns:1fr}.slide-card-stack{width:min(320px,44%)}}
-@media(max-width:640px){.task-slider{grid-template-columns:1fr}.slide-card-stack{position:static;width:100%;transform:none;margin-top:18px}.slide-mockup{min-height:auto}.slide-output-row{grid-template-columns:1fr;gap:4px}}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-  
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--off);
+      line-height: 1.5;
+    }
 
-/* Interactive task slider */
-.slide-option{cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease,background .16s ease}
-.slide-option:hover{transform:translateY(-2px);border-color:rgba(15,118,110,.28)}
-.slide-option:focus-visible{outline:3px solid rgba(41,230,197,.55);outline-offset:3px}
-.slide-option.active{background:var(--white);border-color:rgba(15,118,110,.38);box-shadow:var(--shadow)}
-.slide-image-frame{position:relative;display:grid;place-items:center;min-height:185px;margin:18px 0 20px;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.15)}
-.slide-image-frame.has-image{background-size:cover;background-position:center}
-.slide-image-frame.has-image .slide-image-placeholder{opacity:0}
-.slide-image-placeholder{width:min(86%,420px);padding:18px;border-radius:18px;background:rgba(255,255,255,.09);border:1px dashed rgba(255,255,255,.28);text-align:left;transition:opacity .18s ease}
-.slide-image-placeholder small{display:block;color:var(--teal);font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
-.slide-image-placeholder strong{display:block;color:var(--white);font-size:16px;letter-spacing:-.04em;line-height:1.15}
-.slide-mockup.is-changing{animation:slidePulse .22s ease}
-@keyframes slidePulse{from{transform:translateY(3px);opacity:.86}to{transform:translateY(0);opacity:1}}
-@media(max-width:640px){.slide-image-frame{min-height:155px}}
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .page { overflow: hidden; }
+    .container { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
 
+    h1, h2, h3, p { margin-top: 0; }
 
-/* Mobile-only full slider for task examples */
-.mobile-task-slider{display:none}
-.mobile-slider-hint{display:none}
-@media(max-width:640px){
-  .task-section .section-copy{font-size:16px}
-  .task-slider{display:none}
-  .mobile-task-slider{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:28px -14px 0;padding:0 14px 18px;scrollbar-width:none}
-  .mobile-task-slider::-webkit-scrollbar{display:none}
-  .mobile-slider-hint{display:block;margin-top:14px;color:var(--muted);font-size:13px;font-weight:750;text-align:center}
-  .mobile-task-slide{flex:0 0 88%;scroll-snap-align:center}
-  .mobile-slide-visual{position:relative;overflow:hidden;min-height:250px;border-radius:28px;background:radial-gradient(circle at 20% 12%,rgba(41,230,197,.18),transparent 30%),linear-gradient(135deg,#07111f,#0d1b2d);color:var(--white);box-shadow:var(--shadow);padding:18px;margin-bottom:12px}
-  .mobile-slide-kicker{display:inline-flex;margin-bottom:12px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.13);color:rgba(255,255,255,.76);font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
-  .mobile-slide-visual h3{font-size:28px;line-height:1;letter-spacing:-.065em;margin-bottom:10px;color:var(--white)}
-  .mobile-slide-visual p{color:rgba(255,255,255,.68);font-size:14px;margin:0 0 16px}
-  .mobile-image-box{padding:14px;border-radius:18px;background:var(--white);color:var(--ink);border:1px solid rgba(226,232,240,.9);box-shadow:0 18px 44px rgba(0,0,0,.2)}
-  .mobile-image-box small{display:block;color:var(--teal-dark);font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
-  .mobile-image-box strong{display:block;font-size:14px;line-height:1.2;letter-spacing:-.035em}
-  .mobile-slide-card{display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:center;padding:16px;border-radius:22px;background:var(--white);border:1px solid #e2e8f0;box-shadow:var(--shadow-soft)}
-  .mobile-slide-card .card-icon{display:inline-flex;width:46px;height:46px;border-radius:16px;align-items:center;justify-content:center;background:var(--green-soft);color:var(--teal-dark);margin:0}
-  .mobile-slide-card .card-icon svg{width:22px;height:22px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-  .mobile-slide-card strong{display:block;font-size:16px;letter-spacing:-.04em;color:#0f172a;margin-bottom:2px}
-  .mobile-slide-card span{display:block;color:var(--muted);font-size:13px;font-weight:650;line-height:1.3}
-}
+    h1 {
+      margin-bottom: 22px;
+      font-size: clamp(44px, 7vw, 76px);
+      line-height: 0.94;
+      letter-spacing: -0.078em;
+      font-weight: 900;
+    }
 
+    h2 {
+      margin-bottom: 18px;
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1;
+      letter-spacing: -0.07em;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 23px;
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+    }
+
+    .hero {
+      color: var(--white);
+      background:
+        radial-gradient(circle at 16% 20%, rgba(41,230,197,0.24), transparent 30%),
+        radial-gradient(circle at 88% 12%, rgba(56,189,248,0.18), transparent 28%),
+        linear-gradient(135deg, #07111f 0%, #08182d 54%, #0f172a 100%);
+      padding: 92px 0 76px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.13);
+      color: rgba(255,255,255,0.82);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 0 0 20px rgba(41,230,197,0.8);
+    }
+
+    .hero-sub {
+      max-width: 680px;
+      margin-bottom: 20px;
+      font-size: clamp(19px, 2vw, 23px);
+      color: rgba(255,255,255,0.78);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-meta {
+      margin: 0 0 26px;
+      color: rgba(255,255,255,0.72);
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: rgba(255,255,255,0.62);
+      font-size: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: var(--teal);
+      color: #06201d;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      box-shadow: 0 18px 50px rgba(41, 230, 197, 0.26);
+      transition: transform 0.18s ease;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .hero-visual {
+      padding: 22px;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 28px 90px rgba(0,0,0,0.34);
+      backdrop-filter: blur(18px);
+    }
+
+    .sample-output {
+      border-radius: 24px;
+      background: var(--white);
+      color: var(--ink);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.22);
+    }
+
+    .mock-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .mock-dots { display: flex; gap: 6px; }
+    .mock-dots span { width: 9px; height: 9px; border-radius: 999px; background: #cbd5e1; }
+
+    .mock-label {
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .sample-body { padding: 18px; }
+
+    .sample-title {
+      margin-bottom: 14px;
+      font-size: 26px;
+      line-height: 1.05;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+    }
+
+    .sample-rows {
+      display: grid;
+      gap: 10px;
+    }
+
+    .sample-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 12px;
+      padding: 13px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+    }
+
+    .sample-row span {
+      color: var(--teal-dark);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .sample-row strong {
+      display: block;
+      color: #1e293b;
+      font-size: 14px;
+      letter-spacing: -0.025em;
+    }
+
+    .prompt-pill {
+      margin-top: 14px;
+      padding: 13px;
+      border-radius: 16px;
+      background: #ecfffb;
+      border: 1px solid #ccfbf1;
+      color: #0f766e;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    section { padding: 64px 0; }
+
+    .section-kicker {
+      color: var(--teal-dark);
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section-copy {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+
+    .objections {
+      margin-top: -32px;
+      position: relative;
+      z-index: 5;
+      padding: 0 0 56px;
+    }
+
+    .objection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .objection-card {
+      padding: 22px;
+      border-radius: 24px;
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow);
+    }
+
+    .objection-card h3 {
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+    .objection-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .session-flow { background: var(--off); padding-top: 24px; }
+
+    .session-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .session-card {
+      padding: 22px;
+      min-height: 150px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-icon,
+    .check-icon {
+      display: inline-flex;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      align-items: center;
+      justify-content: center;
+      background: var(--green-soft);
+      color: var(--teal-dark);
+      margin-bottom: 16px;
+    }
+
+    .card-icon svg,
+    .check-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .session-card p {
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: #1e293b;
+    }
+
+    .problem { background: var(--white); }
+
+    .bullet-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .bullet-card {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 22px;
+      border-radius: 22px;
+      background: var(--off);
+      border: 1px solid #e2e8f0;
+    }
+
+    .check {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: var(--green-soft);
+      color: var(--teal-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .bullet-card p {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -0.025em;
+      color: #334155;
+    }
+
+    .promise { background: var(--off); }
+
+    .promise-panel {
+      padding: 38px;
+      border-radius: 36px;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(41,230,197,0.18), transparent 34%),
+        var(--ink);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .promise-panel p {
+      max-width: 760px;
+      color: rgba(255,255,255,0.7);
+      font-size: 19px;
+      margin-bottom: 0;
+    }
+
+    .promise-panel p + p { margin-top: 18px; }
+
+    .example-section { background: var(--white); }
+
+    .example-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 30px;
+      align-items: center;
+      padding: 38px;
+      border-radius: 36px;
+      background:
+        radial-gradient(circle at 8% 15%, rgba(41,230,197,0.13), transparent 28%),
+        linear-gradient(135deg, #07111f, #0d1b2d);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .example-card p {
+      color: rgba(255,255,255,0.68);
+      font-size: 18px;
+    }
+
+    .example-visual {
+      display: grid;
+      gap: 12px;
+    }
+
+    .example-step {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .example-step span {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .example-step strong {
+      display: block;
+      color: var(--white);
+      font-size: 17px;
+      letter-spacing: -0.03em;
+    }
+
+    .task-section { background: var(--off); }
+
+    .task-slider {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 34px;
+    }
+
+    .slide-mockup {
+      position: relative;
+      overflow: hidden;
+      min-height: 440px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(41,230,197,0.16), transparent 28%),
+        linear-gradient(135deg, #07111f, #0d1b2d);
+      color: var(--white);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .slide-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.13);
+      color: rgba(255,255,255,0.78);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .slide-title {
+      max-width: 460px;
+      margin-bottom: 14px;
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 0.98;
+      letter-spacing: -0.07em;
+      font-weight: 900;
+    }
+
+    .slide-copy {
+      max-width: 460px;
+      color: rgba(255,255,255,0.68);
+      font-size: 17px;
+      margin-bottom: 26px;
+    }
+
+    .slide-output {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .slide-output-row {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .slide-output-row span {
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .slide-output-row strong {
+      display: block;
+      color: var(--white);
+      font-size: 15px;
+      letter-spacing: -0.03em;
+    }
+
+    .slide-card-stack {
+      position: absolute;
+      right: -24px;
+      bottom: -24px;
+      width: min(320px, 48%);
+      display: grid;
+      gap: 10px;
+      transform: rotate(-3deg);
+    }
+
+    .mini-slide-card {
+      padding: 14px;
+      border-radius: 18px;
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+      border: 1px solid rgba(226,232,240,0.9);
+    }
+
+    .mini-slide-card small {
+      display: block;
+      color: var(--teal-dark);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .mini-slide-card strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .slide-nav {
+      display: grid;
+      gap: 12px;
+    }
+
+    .slide-option {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 18px;
+      border-radius: 22px;
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      text-align: left;
+      color: inherit;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .slide-option:hover {
+      transform: translateY(-2px);
+    }
+
+    .slide-option.active {
+      border-color: rgba(15,118,110,0.38);
+      box-shadow: var(--shadow);
+    }
+
+    .slide-option .card-icon {
+      margin: 0;
+    }
+
+    .slide-option strong {
+      display: block;
+      font-size: 17px;
+      letter-spacing: -0.04em;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .slide-option span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+      line-height: 1.3;
+    }
+
+    .mobile-slides {
+      display: none;
+    }
+
+    .leave-section { background: var(--white); }
+
+    .leave-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .leave-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--off);
+      border: 1px solid #e2e8f0;
+    }
+
+    .check-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      background: var(--green-soft);
+      color: var(--teal-dark);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      margin: 0;
+    }
+
+    .leave-card p {
+      margin: 0;
+      font-weight: 850;
+      font-size: 15px;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+      color: #1e293b;
+    }
+
+    .karsten { background: var(--off); }
+
+    .karsten-card {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 32px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 36px;
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait {
+      min-height: 360px;
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(41,230,197,0.84), rgba(56,189,248,0.78)),
+        linear-gradient(135deg, #0f172a, #1e293b);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portrait::before {
+      content: "Karsten";
+      position: absolute;
+      left: 28px;
+      bottom: 24px;
+      color: rgba(255,255,255,0.94);
+      font-size: 54px;
+      line-height: 0.9;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+    }
+
+    .karsten-card p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .cta-section {
+      padding: 76px 0;
+      color: var(--white);
+      text-align: center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(41,230,197,0.18), transparent 35%),
+        linear-gradient(135deg, #07111f, #0f172a);
+    }
+
+    .cta-section h2 {
+      max-width: 760px;
+      margin: 0 auto 18px;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.7);
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    .faq { background: var(--off); }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: var(--white);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-soft);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .footer {
+      padding: 24px 0;
+      background: #050b14;
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .example-card,
+      .task-slider,
+      .karsten-card,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .objection-grid,
+      .session-grid,
+      .leave-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .slide-card-stack {
+        width: min(320px, 44%);
+      }
+
+      .portrait {
+        min-height: 300px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, 1080px);
+      }
+
+      .hero {
+        padding: 72px 0 56px;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .objection-grid,
+      .session-grid,
+      .leave-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual,
+      .promise-panel,
+      .example-card,
+      .karsten-card {
+        padding: 22px;
+      }
+
+      .task-slider {
+        display: none;
+      }
+
+      .mobile-slides {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 4px 0 12px;
+        margin-top: 30px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .mobile-slide {
+        min-width: 86%;
+        scroll-snap-align: start;
+      }
+
+      .mobile-slide .slide-mockup {
+        min-height: auto;
+        padding: 22px;
+      }
+
+      .mobile-slide .slide-card-stack {
+        position: static;
+        width: 100%;
+        transform: none;
+        margin-top: 18px;
+      }
+
+      .mobile-card-under {
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 14px;
+        align-items: center;
+        padding: 18px;
+        border-radius: 22px;
+        background: var(--white);
+        border: 1px solid #e2e8f0;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .mobile-card-under .card-icon {
+        margin: 0;
+      }
+
+      .mobile-card-under strong {
+        display: block;
+        font-size: 17px;
+        letter-spacing: -0.04em;
+        color: #0f172a;
+        margin-bottom: 2px;
+      }
+
+      .mobile-card-under span {
+        display: block;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 650;
+        line-height: 1.3;
+      }
+
+      .session-card {
+        min-height: auto;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="page">
+
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow"><span class="eyebrow-dot"></span>90 minutes · 20 seats · $39 early bird</div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            90 minutes · 20 seats · $39 early bird
+          </div>
+
           <h1>Bring one task that keeps slowing you down.</h1>
-          <p class="hero-sub">Leave with a faster AI-assisted way to handle it before the workshop ends.</p>
-          <p class="hero-meta">90 minutes · $39 early bird · capped at 20 people</p>
+
+          <p class="hero-sub">
+            Leave with a faster AI-assisted way to handle it before the workshop ends.
+          </p>
+
+          <p class="hero-meta">
+            90 minutes · $39 early bird · capped at 20 people
+          </p>
+
           <a href="#register" class="button">Save My Seat</a>
-          <p class="hero-note">No coding. No tech skills. No sensitive business data required.</p>
+
+          <p class="hero-note">
+            No coding. No tech skills. No sensitive business data required. You’ll get the Zoom link, replay, worksheet, and prompt library.
+          </p>
         </div>
-        <div class="visual-shell">
-          <div class="screenshot-stack">
-            <div class="mock-card one">
-              <div class="mock-top"><div class="mock-dots"><span></span><span></span><span></span></div><div class="mock-label">Claude prompt/result placeholder</div></div>
-              <div class="mock-body">
-                <div class="prompt-box">“Help me turn this repeated customer question into a simple reply workflow my team can reuse.”</div>
-                <div class="result-list">
-                  <div class="result-line"><span class="tiny-check">✓</span>Draft reply template</div>
-                  <div class="result-line"><span class="tiny-check">✓</span>Follow-up checklist</div>
-                  <div class="result-line"><span class="tiny-check">✓</span>What to ask the customer next</div>
+
+        <div class="hero-visual">
+          <div class="sample-output">
+            <div class="mock-top">
+              <div class="mock-dots"><span></span><span></span><span></span></div>
+              <div class="mock-label">Example workshop output</div>
+            </div>
+
+            <div class="sample-body">
+              <div class="sample-title">Customer follow-up workflow</div>
+
+              <div class="sample-rows">
+                <div class="sample-row">
+                  <span>Before</span>
+                  <strong>The owner rewrites every customer reply from scratch.</strong>
+                </div>
+
+                <div class="sample-row">
+                  <span>Task</span>
+                  <strong>“How do I respond faster when customers ask about pricing, availability, or next steps?”</strong>
+                </div>
+
+                <div class="sample-row">
+                  <span>Process</span>
+                  <strong>Identify the question, choose a reply template, add the missing detail, send the next step, log the follow-up.</strong>
+                </div>
+
+                <div class="sample-row">
+                  <span>Leaves with</span>
+                  <strong>A reusable prompt, reply template, and follow-up checklist.</strong>
                 </div>
               </div>
-            </div>
-            <div class="mock-card two">
-              <div class="mock-top"><div class="mock-dots"><span></span><span></span><span></span></div><div class="mock-label">Workflow worksheet placeholder</div></div>
-              <div class="mock-body">
-                <div class="worksheet-grid">
-                  <div class="worksheet-row"><strong>Task</strong><span>Customer follow-up</span></div>
-                  <div class="worksheet-row"><strong>Bottleneck</strong><span>Owner rewrites replies from scratch</span></div>
-                  <div class="worksheet-row"><strong>AI helps by</strong><span>Drafting, checklist, next step</span></div>
-                </div>
+
+              <div class="prompt-pill">
+                Sample prompt: “Turn this customer question into a reusable response workflow my team can use.”
               </div>
-            </div>
-            <div class="mock-card three">
-              <div class="mock-top"><div class="mock-dots"><span></span><span></span><span></span></div><div class="mock-label">Live workshop placeholder</div></div>
-              <div class="mock-body"><div class="zoom-placeholder"><div class="avatar"></div><div><strong>Live working session</strong><span>Bring your task. Build the first version.</span></div></div></div>
             </div>
           </div>
         </div>
@@ -125,82 +956,176 @@
     </section>
 
     <section class="objections">
-      <div class="container"><div class="objection-grid">
-        <div class="objection-card"><h3>No coding required</h3><p>This is for business owners, not developers.</p></div>
-        <div class="objection-card"><h3>Bring the shape of the task</h3><p>No passwords, private customer data, or sensitive records needed.</p></div>
-        <div class="objection-card"><h3>You’ll work on one real task</h3><p>This is not a lecture or tool tour.</p></div>
-      </div></div>
+      <div class="container">
+        <div class="objection-grid">
+          <div class="objection-card">
+            <h3>No coding required</h3>
+            <p>This is for business owners, not developers.</p>
+          </div>
+
+          <div class="objection-card">
+            <h3>Bring the shape of the task</h3>
+            <p>No passwords, private customer data, or sensitive records needed.</p>
+          </div>
+
+          <div class="objection-card">
+            <h3>You’ll work on one real task</h3>
+            <p>This is not a lecture or tool tour.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="problem"><div class="container"><div class="bullet-stack">
-      <div class="bullet-card"><div class="check">✓</div><p>AI feels overwhelming because everyone starts too big.</p></div>
-      <div class="bullet-card"><div class="check">✓</div><p>Too much work lives in your head, and your team keeps coming back to you for answers.</p></div>
-      <div class="bullet-card"><div class="check">✓</div><p>You tried ChatGPT, got mixed results, and went back to doing it yourself.</p></div>
-    </div></div></section>
+    <section class="session-flow">
+      <div class="container">
+        <div class="section-kicker">Inside the 90 minutes</div>
+        <h2>You will not just listen. You will work on one real task.</h2>
 
-    <section class="promise"><div class="container"><div class="promise-panel">
-      <div class="section-kicker">The promise</div><h2>One task. One workflow. One win.</h2>
-      <p>This is not a lecture. It is a working session.</p>
-      <p>You bring one real bottleneck. We help you reshape it into something clearer, faster, and repeatable.</p>
-    </div></div></section>
+        <div class="session-grid">
+          <div class="session-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg>
+            </div>
+            <p>Pick the task that is costing you time</p>
+          </div>
 
-    <section class="case-study"><div class="container"><div class="case-card">
-      <div><div class="section-kicker">Example outcome</div><h2>What this could look like in a real business.</h2><p>Placeholder case study: A local service business had the same customer questions coming in every week. Instead of answering from scratch, they turned those repeated questions into a simple AI-assisted response workflow.</p><p>The result: faster replies, fewer dropped balls, and a repeatable process the owner could improve or hand off.</p></div>
-      <div class="case-visual"><div class="case-step"><span>Before</span><strong>Repeated questions lived in the owner’s head.</strong></div><div class="case-step"><span>Built</span><strong>A simple answer bank plus AI-assisted reply workflow.</strong></div><div class="case-step"><span>After</span><strong>Faster responses and less owner dependency.</strong></div></div>
-    </div></div></section>
+          <div class="session-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg>
+            </div>
+            <p>Break down what currently happens</p>
+          </div>
+
+          <div class="session-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z"></path></svg>
+            </div>
+            <p>Use AI to create a clearer first version</p>
+          </div>
+
+          <div class="session-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
+            <p>Leave with the next step to use it again</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem">
+      <div class="container">
+        <div class="bullet-stack">
+          <div class="bullet-card">
+            <div class="check">✓</div>
+            <p>AI feels overwhelming because everyone starts too big.</p>
+          </div>
+
+          <div class="bullet-card">
+            <div class="check">✓</div>
+            <p>Too much work lives in your head, and your team keeps coming back to you for answers.</p>
+          </div>
+
+          <div class="bullet-card">
+            <div class="check">✓</div>
+            <p>You tried ChatGPT, got mixed results, and went back to doing it yourself.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise">
+      <div class="container">
+        <div class="promise-panel">
+          <div class="section-kicker">The promise</div>
+          <h2>One annoying task. One repeatable process. One quick win.</h2>
+          <p>
+            This is not a lecture. It is a working session.
+          </p>
+          <p>
+            You bring one real bottleneck. We help you reshape it into something clearer, faster, and repeatable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="example-section">
+      <div class="container">
+        <div class="example-card">
+          <div>
+            <div class="section-kicker">Example output</div>
+            <h2>What this could look like in a real business.</h2>
+            <p>
+              A local service business has the same customer questions coming in every week. Instead of answering from scratch, the workshop turns those repeated questions into a simple AI-assisted response process.
+            </p>
+            <p>
+              The result: faster replies, fewer dropped balls, and a repeatable process the owner can improve or hand off.
+            </p>
+          </div>
+
+          <div class="example-visual">
+            <div class="example-step">
+              <span>Before</span>
+              <strong>Repeated questions live in the owner’s head.</strong>
+            </div>
+            <div class="example-step">
+              <span>Built</span>
+              <strong>A simple answer bank plus AI-assisted reply process.</strong>
+            </div>
+            <div class="example-step">
+              <span>After</span>
+              <strong>Faster responses and less owner dependency.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="task-section">
       <div class="container">
         <div class="section-kicker">What should you bring?</div>
         <h2>Bring one task you already want off your plate.</h2>
         <p class="section-copy">
-          Click each option to swap the featured mockup. Replace the placeholder visual with a real screenshot, prompt, or worksheet later.
+          Click an option to see how that kind of task could be turned into a clearer AI-assisted process.
         </p>
 
         <div class="task-slider">
-          <div class="slide-mockup" id="taskSlide">
-            <div class="slide-eyebrow" id="taskSlideEyebrow">Featured placeholder slide</div>
-            <div class="slide-title" id="taskSlideTitle">Customer follow-up you keep rewriting</div>
-            <p class="slide-copy" id="taskSlideCopy">
-              Use this space for a real mockup: a customer question, a Claude prompt, and the reusable reply workflow created during the workshop.
+          <div class="slide-mockup" id="taskSlideVisual">
+            <div class="slide-eyebrow" id="slideEyebrow">Featured example</div>
+            <div class="slide-title" id="slideTitle">Customer follow-up you keep rewriting</div>
+            <p class="slide-copy" id="slideCopy">
+              A customer asks about pricing, availability, or next steps. Instead of starting over every time, you build a reusable reply process.
             </p>
-
-            <div class="slide-image-frame" id="taskSlideImage">
-              <div class="slide-image-placeholder">
-                <small id="taskSlideImageLabel">Image placeholder</small>
-                <strong id="taskSlideImageText">Customer question → Claude prompt → reusable reply workflow</strong>
-              </div>
-            </div>
 
             <div class="slide-output">
               <div class="slide-output-row">
                 <span>Before</span>
-                <strong id="taskSlideBefore">You start from scratch every time.</strong>
+                <strong id="slideBefore">You start from scratch every time.</strong>
               </div>
               <div class="slide-output-row">
                 <span>Workshop</span>
-                <strong id="taskSlideWorkshop">Map the repeated situation and create a reusable AI-assisted reply flow.</strong>
+                <strong id="slideDuring">Map the repeated situation and create a reusable AI-assisted reply flow.</strong>
               </div>
               <div class="slide-output-row">
                 <span>After</span>
-                <strong id="taskSlideAfter">You have a draft response, follow-up checklist, and next question to ask.</strong>
+                <strong id="slideAfter">You have a draft response, follow-up checklist, and next question to ask.</strong>
               </div>
             </div>
 
             <div class="slide-card-stack">
               <div class="mini-slide-card">
-                <small>Prompt placeholder</small>
-                <strong id="taskSlidePrompt">“Turn this customer question into a reusable reply workflow.”</strong>
+                <small>Sample prompt</small>
+                <strong id="slidePrompt">“Turn this customer question into a reusable reply workflow.”</strong>
               </div>
               <div class="mini-slide-card">
-                <small>Output placeholder</small>
-                <strong id="taskSlideOutput">Reply template + checklist + next step</strong>
+                <small>Sample output</small>
+                <strong id="slideOutput">Reply template + checklist + next step</strong>
               </div>
             </div>
           </div>
 
-          <div class="slide-nav" aria-label="Task examples">
-            <div class="slide-option active" role="button" tabindex="0" data-slide="customer">
+          <div class="slide-nav" id="slideNav">
+            <button class="slide-option active" type="button" data-slide="followup">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg>
               </div>
@@ -208,9 +1133,9 @@
                 <strong>Customer follow-up</strong>
                 <span>Repeated replies, quotes, next-step emails, and customer questions.</span>
               </div>
-            </div>
+            </button>
 
-            <div class="slide-option" role="button" tabindex="0" data-slide="staff">
+            <button class="slide-option" type="button" data-slide="staff">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M17 11a3 3 0 0 0 0-6"></path><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path></svg>
               </div>
@@ -218,9 +1143,9 @@
                 <strong>Staff questions</strong>
                 <span>The answers your team keeps coming back to you for.</span>
               </div>
-            </div>
+            </button>
 
-            <div class="slide-option" role="button" tabindex="0" data-slide="process">
+            <button class="slide-option" type="button" data-slide="process">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24"><path d="M6 4h12v6H6z"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path></svg>
               </div>
@@ -228,9 +1153,9 @@
                 <strong>Messy process</strong>
                 <span>A task nobody follows the same way twice.</span>
               </div>
-            </div>
+            </button>
 
-            <div class="slide-option" role="button" tabindex="0" data-slide="document">
+            <button class="slide-option" type="button" data-slide="document">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h5"></path><path d="M9 12h6"></path><path d="M9 16h6"></path></svg>
               </div>
@@ -238,9 +1163,9 @@
                 <strong>Buried document</strong>
                 <span>A manual, policy, note, or SOP nobody wants to dig through.</span>
               </div>
-            </div>
+            </button>
 
-            <div class="slide-option" role="button" tabindex="0" data-slide="research">
+            <button class="slide-option" type="button" data-slide="research">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5L21 21"></path></svg>
               </div>
@@ -248,226 +1173,283 @@
                 <strong>Research task</strong>
                 <span>A decision you keep avoiding because there is too much to sort through.</span>
               </div>
-            </div>
+            </button>
           </div>
         </div>
 
-        <div class="mobile-task-slider" aria-label="Swipe through task examples">
-          <div class="mobile-task-slide">
-            <div class="mobile-slide-visual">
-              <div class="mobile-slide-kicker">Slide 1 placeholder</div>
-              <h3>Customer follow-up</h3>
-              <p>Show a real customer question, Claude prompt, and reusable reply workflow here.</p>
-              <div class="mobile-image-box"><small>Image placeholder</small><strong>Customer question → Claude prompt → reusable reply workflow</strong></div>
+        <div class="mobile-slides">
+          <div class="mobile-slide">
+            <div class="slide-mockup">
+              <div class="slide-eyebrow">Featured example</div>
+              <div class="slide-title">Customer follow-up</div>
+              <p class="slide-copy">Build a reusable reply process for repeated customer questions.</p>
+              <div class="slide-output">
+                <div class="slide-output-row"><span>Before</span><strong>You start from scratch every time.</strong></div>
+                <div class="slide-output-row"><span>After</span><strong>Reply template + checklist + next step.</strong></div>
+              </div>
             </div>
-            <div class="mobile-slide-card">
-              <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></div>
-              <div><strong>Customer follow-up</strong><span>Repeated replies, quotes, next-step emails, and customer questions.</span></div>
-            </div>
+            <div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></div><div><strong>Customer follow-up</strong><span>Repeated replies, quotes, next-step emails, and customer questions.</span></div></div>
           </div>
 
-          <div class="mobile-task-slide">
-            <div class="mobile-slide-visual">
-              <div class="mobile-slide-kicker">Slide 2 placeholder</div>
-              <h3>Staff questions</h3>
-              <p>Show an internal FAQ, team question, or policy turning into an answer system.</p>
-              <div class="mobile-image-box"><small>Image placeholder</small><strong>Team question → answer bank → reusable staff guidance</strong></div>
+          <div class="mobile-slide">
+            <div class="slide-mockup">
+              <div class="slide-eyebrow">Featured example</div>
+              <div class="slide-title">Staff questions</div>
+              <p class="slide-copy">Turn repeated answers into something your team can use.</p>
+              <div class="slide-output">
+                <div class="slide-output-row"><span>Before</span><strong>Your team keeps coming back to you.</strong></div>
+                <div class="slide-output-row"><span>After</span><strong>Answer bank + simple internal process.</strong></div>
+              </div>
             </div>
-            <div class="mobile-slide-card">
-              <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M17 11a3 3 0 0 0 0-6"></path><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path></svg></div>
-              <div><strong>Staff questions</strong><span>The answers your team keeps coming back to you for.</span></div>
-            </div>
+            <div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M17 11a3 3 0 0 0 0-6"></path><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path></svg></div><div><strong>Staff questions</strong><span>The answers your team keeps coming back to you for.</span></div></div>
           </div>
 
-          <div class="mobile-task-slide">
-            <div class="mobile-slide-visual">
-              <div class="mobile-slide-kicker">Slide 3 placeholder</div>
-              <h3>Messy process</h3>
-              <p>Show a before/after process map or workflow worksheet screenshot here.</p>
-              <div class="mobile-image-box"><small>Image placeholder</small><strong>Messy steps → clean checklist → repeatable workflow</strong></div>
+          <div class="mobile-slide">
+            <div class="slide-mockup">
+              <div class="slide-eyebrow">Featured example</div>
+              <div class="slide-title">Messy process</div>
+              <p class="slide-copy">Map the inconsistent task and create a cleaner repeatable path.</p>
+              <div class="slide-output">
+                <div class="slide-output-row"><span>Before</span><strong>Nobody follows it the same way twice.</strong></div>
+                <div class="slide-output-row"><span>After</span><strong>Step-by-step process with AI support.</strong></div>
+              </div>
             </div>
-            <div class="mobile-slide-card">
-              <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M6 4h12v6H6z"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path></svg></div>
-              <div><strong>Messy process</strong><span>A task nobody follows the same way twice.</span></div>
-            </div>
+            <div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M6 4h12v6H6z"></path><path d="M6 14h12v6H6z"></path><path d="M12 10v4"></path></svg></div><div><strong>Messy process</strong><span>A task nobody follows the same way twice.</span></div></div>
           </div>
 
-          <div class="mobile-task-slide">
-            <div class="mobile-slide-visual">
-              <div class="mobile-slide-kicker">Slide 4 placeholder</div>
-              <h3>Buried document</h3>
-              <p>Show a manual, policy, note, or SOP turning into searchable answers.</p>
-              <div class="mobile-image-box"><small>Image placeholder</small><strong>Manual/SOP → useful summary → searchable answers</strong></div>
+          <div class="mobile-slide">
+            <div class="slide-mockup">
+              <div class="slide-eyebrow">Featured example</div>
+              <div class="slide-title">Buried document</div>
+              <p class="slide-copy">Turn manuals, policies, and notes into answers you can actually find.</p>
+              <div class="slide-output">
+                <div class="slide-output-row"><span>Before</span><strong>Knowledge is trapped in pages nobody reads.</strong></div>
+                <div class="slide-output-row"><span>After</span><strong>Searchable answers + next-step guide.</strong></div>
+              </div>
             </div>
-            <div class="mobile-slide-card">
-              <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h5"></path><path d="M9 12h6"></path><path d="M9 16h6"></path></svg></div>
-              <div><strong>Buried document</strong><span>A manual, policy, note, or SOP nobody wants to dig through.</span></div>
-            </div>
+            <div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v5h5"></path><path d="M9 12h6"></path><path d="M9 16h6"></path></svg></div><div><strong>Buried document</strong><span>A manual, policy, note, or SOP nobody wants to dig through.</span></div></div>
           </div>
 
-          <div class="mobile-task-slide">
-            <div class="mobile-slide-visual">
-              <div class="mobile-slide-kicker">Slide 5 placeholder</div>
-              <h3>Research task</h3>
-              <p>Show a comparison table, options summary, or decision brief created with AI.</p>
-              <div class="mobile-image-box"><small>Image placeholder</small><strong>Options → comparison → clearer recommendation</strong></div>
+          <div class="mobile-slide">
+            <div class="slide-mockup">
+              <div class="slide-eyebrow">Featured example</div>
+              <div class="slide-title">Research task</div>
+              <p class="slide-copy">Turn too much information into a clearer recommendation and next step.</p>
+              <div class="slide-output">
+                <div class="slide-output-row"><span>Before</span><strong>You avoid the decision because there’s too much to sort.</strong></div>
+                <div class="slide-output-row"><span>After</span><strong>Summary + comparison + recommendation.</strong></div>
+              </div>
             </div>
-            <div class="mobile-slide-card">
-              <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5L21 21"></path></svg></div>
-              <div><strong>Research task</strong><span>A decision you keep avoiding because there is too much to sort through.</span></div>
-            </div>
+            <div class="mobile-card-under"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M16.5 16.5L21 21"></path></svg></div><div><strong>Research task</strong><span>A decision you keep avoiding because there is too much to sort through.</span></div></div>
           </div>
         </div>
-        <div class="mobile-slider-hint">Swipe to see more examples</div>
-
       </div>
     </section>
 
-    <section class="session-flow"><div class="container"><div class="section-kicker">Inside the 90 minutes</div><h2>You will not just listen. You will work on one real task.</h2><div class="session-grid">
-      <div class="session-card"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg></div><p>Pick the task that is costing you time</p></div>
-      <div class="session-card"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg></div><p>Break down what currently happens</p></div>
-      <div class="session-card"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z"></path></svg></div><p>Use AI to create a clearer first version</p></div>
-      <div class="session-card"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>Leave with the next step to use it again</p></div>
-    </div></div></section>
+    <section class="leave-section">
+      <div class="container">
+        <div class="section-kicker">What you leave with</div>
+        <h2>A simple first version, not another pile of ideas.</h2>
 
-    <section class="leave-section"><div class="container"><div class="section-kicker">What you leave with</div><h2>A simple first version, not another pile of ideas.</h2><div class="leave-grid">
-      <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>One task clarified</p></div>
-      <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>One workflow started</p></div>
-      <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>AI workflow worksheet</p></div>
-      <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>Prompt/template library</p></div>
-      <div class="leave-card"><div class="check-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg></div><p>Replay included</p></div>
-    </div></div></section>
+        <div class="leave-grid">
+          <div class="leave-card">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
+            <p>One task clarified</p>
+          </div>
 
-    <section class="karsten"><div class="container"><div class="karsten-card"><div class="portrait" aria-label="Placeholder for Karsten photo"></div><div><div class="section-kicker">About Karsten</div><h2>Karsten translates AI into practical business use.</h2><p>Karsten translates AI into practical business use. In the workshop, he will show how a messy task, like a manual, customer question, repeated process, or internal knowledge gap, can become something easier to search, understand, and act on.</p><p>Placeholder proof: add one real example here from Karsten, such as a water heater issue, farm manual, equipment label, customer support workflow, or process he fixed with AI in minutes.</p><p>No jargon. No tool overload. Just one practical use case you can understand and repeat.</p></div></div></div></section>
+          <div class="leave-card">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
+            <p>One process started</p>
+          </div>
 
-    <section class="cta-section" id="register"><div class="container"><h2>Capped at 20 people.</h2><p>$39 early bird. $57 regular.</p><a href="#" class="button">Save My Seat</a></div></section>
+          <div class="leave-card">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
+            <p>AI workflow worksheet</p>
+          </div>
 
-    <section class="faq"><div class="container faq-grid"><div><div class="section-kicker">Questions</div><h2>For the owner who is interested but skeptical.</h2><p class="section-copy">You do not need to become technical. You need one task worth improving.</p></div><div class="faq-list">
-      <details><summary>Do I need to know how to code?</summary><p>No. This is for business owners, not developers.</p></details>
-      <details><summary>What kind of task should I bring?</summary><p>Bring anything repetitive, confusing, slow, messy, or mentally draining. Customer follow-up, staff questions, research, documents, admin, planning, or troubleshooting all work.</p></details>
-      <details><summary>What if I have tried AI and it was not helpful?</summary><p>That is common. Most people get weak results because they do not know where AI fits or what context to give it. This workshop helps you apply it to a real business problem.</p></details>
-      <details><summary>Do I need to bring private business information?</summary><p>No. Bring the shape of the task, not sensitive customer data, passwords, financial records, or private internal information.</p></details>
-      <details><summary>What is included?</summary><p>You get the live workshop, replay access, an AI workflow worksheet, and a prompt/template library you can keep using after the session.</p></details>
-      <details><summary>What will I leave with?</summary><p>You will leave with one task clarified, one AI-assisted workflow started, and a clearer next step for using AI in your business.</p></details>
-    </div></div></section>
+          <div class="leave-card">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
+            <p>Prompt/template library</p>
+          </div>
 
-    <footer class="footer"><div class="container">Practical AI for real business problems.</div></footer>
+          <div class="leave-card">
+            <div class="check-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"></path></svg>
+            </div>
+            <p>Replay included</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="karsten">
+      <div class="container">
+        <div class="karsten-card">
+          <div class="portrait" aria-label="Placeholder for Karsten photo"></div>
+
+          <div>
+            <div class="section-kicker">About Karsten</div>
+            <h2>Karsten translates AI into practical business use.</h2>
+
+            <p>
+              In the workshop, Karsten will show how a messy task, like a manual, customer question, repeated process, or internal knowledge gap, can become something easier to search, understand, and act on.
+            </p>
+
+            <p>
+              Add one real example here from Karsten, such as a water heater issue, farm manual, equipment label, customer support process, or task he fixed with AI in minutes.
+            </p>
+
+            <p>
+              No jargon. No tool overload. Just one practical use case you can understand and repeat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" id="register">
+      <div class="container">
+        <h2>Capped at 20 people.</h2>
+        <p>$39 early bird. $57 regular. Small group so people can get help on real business tasks.</p>
+        <a href="#" class="button">Save My Seat</a>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container faq-grid">
+        <div>
+          <div class="section-kicker">Questions</div>
+          <h2>For the owner who is interested but skeptical.</h2>
+          <p class="section-copy">
+            You do not need to become technical. You need one task worth improving.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Do I need to know how to code?</summary>
+            <p>No. This is for business owners, not developers.</p>
+          </details>
+
+          <details>
+            <summary>What kind of task should I bring?</summary>
+            <p>Bring anything repetitive, confusing, slow, messy, or mentally draining. Customer follow-up, staff questions, research, documents, admin, planning, or troubleshooting all work.</p>
+          </details>
+
+          <details>
+            <summary>What if I have tried AI and it was not helpful?</summary>
+            <p>That is common. Most people get weak results because they do not know where AI fits or what context to give it. This workshop helps you apply it to a real business problem.</p>
+          </details>
+
+          <details>
+            <summary>Do I need to bring private business information?</summary>
+            <p>No. Bring the shape of the task, not sensitive customer data, passwords, financial records, or private internal information.</p>
+          </details>
+
+          <details>
+            <summary>What is included?</summary>
+            <p>You get the live workshop, replay access, an AI workflow worksheet, and a prompt/template library you can keep using after the session.</p>
+          </details>
+
+          <details>
+            <summary>What will I leave with?</summary>
+            <p>You will leave with one task clarified, one AI-assisted process started, and a clearer next step for using AI in your business.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        Practical AI for real business problems.
+      </div>
+    </footer>
+
   </div>
 
-<script>
-  const taskSlides = {
-    customer: {
-      eyebrow: "Featured placeholder slide",
-      title: "Customer follow-up you keep rewriting",
-      copy: "Use this space for a real mockup: a customer question, a Claude prompt, and the reusable reply workflow created during the workshop.",
-      image: "",
-      imageLabel: "Image placeholder",
-      imageText: "Customer question → Claude prompt → reusable reply workflow",
-      before: "You start from scratch every time.",
-      workshop: "Map the repeated situation and create a reusable AI-assisted reply flow.",
-      after: "You have a draft response, follow-up checklist, and next question to ask.",
-      prompt: "“Turn this customer question into a reusable reply workflow.”",
-      output: "Reply template + checklist + next step"
-    },
-    staff: {
-      eyebrow: "Placeholder slide 2",
-      title: "Staff questions that keep coming back to you",
-      copy: "Use this space for a screenshot of an internal FAQ, policy, or team question being turned into a reusable answer system.",
-      image: "",
-      imageLabel: "Image placeholder",
-      imageText: "Team question → answer bank → reusable staff guidance",
-      before: "Your team asks you the same questions over and over.",
-      workshop: "Turn the repeated answers into a simple AI-assisted team reference.",
-      after: "Your team has a clearer place to start before interrupting you.",
-      prompt: "“Turn these repeated staff questions into a simple internal answer guide.”",
-      output: "FAQ draft + answer format + escalation rules"
-    },
-    process: {
-      eyebrow: "Placeholder slide 3",
-      title: "A messy process nobody follows consistently",
-      copy: "Use this space for a before/after process map or workflow worksheet screenshot.",
-      image: "",
-      imageLabel: "Image placeholder",
-      imageText: "Messy steps → clean checklist → repeatable workflow",
-      before: "The process changes depending on who does it.",
-      workshop: "Map the current steps and identify where the process breaks down.",
-      after: "You leave with a clearer version people can actually follow.",
-      prompt: "“Turn this messy process into a simple step-by-step checklist.”",
-      output: "Process map + checklist + handoff notes"
-    },
-    document: {
-      eyebrow: "Placeholder slide 4",
-      title: "A document nobody wants to dig through",
-      copy: "Use this space for a manual, policy, SOP, or training note being turned into searchable answers.",
-      image: "",
-      imageLabel: "Image placeholder",
-      imageText: "Manual/SOP → useful summary → searchable answers",
-      before: "Important knowledge is buried in long documents or notes.",
-      workshop: "Use AI to pull out the useful parts and turn them into plain-language answers.",
-      after: "You can find the answer faster and explain the next step clearly.",
-      prompt: "“Summarize this SOP and turn it into answers my team can use.”",
-      output: "Summary + key steps + common questions"
-    },
-    research: {
-      eyebrow: "Placeholder slide 5",
-      title: "A decision or research task you keep avoiding",
-      copy: "Use this space for a comparison table, options summary, or decision brief created with AI.",
-      image: "",
-      imageLabel: "Image placeholder",
-      imageText: "Options → comparison → clearer recommendation",
-      before: "You keep postponing the decision because there is too much to sort through.",
-      workshop: "Use AI to compare options, summarize tradeoffs, and clarify next steps.",
-      after: "You leave with a simple decision brief and a clearer next move.",
-      prompt: "“Compare these options and recommend the best next step for my business.”",
-      output: "Comparison table + tradeoffs + recommendation"
-    }
-  };
-
-  function setTaskSlide(key) {
-    const slide = taskSlides[key];
-    if (!slide) return;
-
-    const root = document.getElementById("taskSlide");
-    const imageFrame = document.getElementById("taskSlideImage");
-
-    document.getElementById("taskSlideEyebrow").textContent = slide.eyebrow;
-    document.getElementById("taskSlideTitle").textContent = slide.title;
-    document.getElementById("taskSlideCopy").textContent = slide.copy;
-    document.getElementById("taskSlideImageLabel").textContent = slide.imageLabel;
-    document.getElementById("taskSlideImageText").textContent = slide.imageText;
-    document.getElementById("taskSlideBefore").textContent = slide.before;
-    document.getElementById("taskSlideWorkshop").textContent = slide.workshop;
-    document.getElementById("taskSlideAfter").textContent = slide.after;
-    document.getElementById("taskSlidePrompt").textContent = slide.prompt;
-    document.getElementById("taskSlideOutput").textContent = slide.output;
-
-    if (slide.image) {
-      imageFrame.style.backgroundImage = `linear-gradient(rgba(7,17,31,.08), rgba(7,17,31,.08)), url('${slide.image}')`;
-      imageFrame.classList.add("has-image");
-    } else {
-      imageFrame.style.backgroundImage = "";
-      imageFrame.classList.remove("has-image");
-    }
-
-    document.querySelectorAll(".slide-option").forEach(option => {
-      option.classList.toggle("active", option.dataset.slide === key);
-    });
-
-    root.classList.remove("is-changing");
-    void root.offsetWidth;
-    root.classList.add("is-changing");
-  }
-
-  document.querySelectorAll(".slide-option").forEach(option => {
-    option.addEventListener("click", () => setTaskSlide(option.dataset.slide));
-    option.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        setTaskSlide(option.dataset.slide);
+  <script>
+    const slides = {
+      followup: {
+        title: "Customer follow-up you keep rewriting",
+        copy: "A customer asks about pricing, availability, or next steps. Instead of starting over every time, you build a reusable reply process.",
+        before: "You start from scratch every time.",
+        during: "Map the repeated situation and create a reusable AI-assisted reply flow.",
+        after: "You have a draft response, follow-up checklist, and next question to ask.",
+        prompt: "“Turn this customer question into a reusable reply workflow.”",
+        output: "Reply template + checklist + next step"
+      },
+      staff: {
+        title: "Staff questions you answer over and over",
+        copy: "Your team keeps coming back to you for the same answers. You start turning those answers into a reusable internal support process.",
+        before: "Important answers live in your head.",
+        during: "Capture the repeated questions and turn them into a searchable answer bank.",
+        after: "Your team has a clearer place to start before interrupting you.",
+        prompt: "“Turn these repeated staff questions into an internal answer guide.”",
+        output: "Answer bank + internal checklist + handoff notes"
+      },
+      process: {
+        title: "A process nobody follows consistently",
+        copy: "The task technically exists, but everyone handles it differently. You map the messy version and create a cleaner repeatable path.",
+        before: "Nobody follows the task the same way twice.",
+        during: "Break the process into clear steps and identify where AI can help.",
+        after: "You leave with a cleaner first version your team can repeat.",
+        prompt: "“Turn this messy process into a simple step-by-step workflow.”",
+        output: "Process map + checklist + AI support points"
+      },
+      document: {
+        title: "A document nobody wants to dig through",
+        copy: "Manuals, policies, notes, and SOPs can become more usable when AI helps surface the answer and next step.",
+        before: "Useful information is buried in pages nobody reads.",
+        during: "Use AI to summarize, organize, and turn the document into practical answers.",
+        after: "You can find the right answer faster and act on it.",
+        prompt: "“Turn this document into a quick-answer guide for my team.”",
+        output: "Searchable guide + summary + next-step checklist"
+      },
+      research: {
+        title: "A decision or research task you keep avoiding",
+        copy: "When there is too much information to sort through, AI can help compare options, summarize tradeoffs, and clarify your next step.",
+        before: "You avoid the decision because there is too much to sort through.",
+        during: "Gather the inputs and have AI organize the tradeoffs.",
+        after: "You leave with a clearer recommendation and next step.",
+        prompt: "“Compare these options and give me a practical recommendation.”",
+        output: "Summary + comparison table + recommendation"
       }
-    });
-  });
-</script>
+    };
 
+    const options = document.querySelectorAll("[data-slide]");
+    const title = document.getElementById("slideTitle");
+    const copy = document.getElementById("slideCopy");
+    const before = document.getElementById("slideBefore");
+    const during = document.getElementById("slideDuring");
+    const after = document.getElementById("slideAfter");
+    const promptText = document.getElementById("slidePrompt");
+    const output = document.getElementById("slideOutput");
+
+    options.forEach((option) => {
+      option.addEventListener("click", () => {
+        const key = option.dataset.slide;
+        const slide = slides[key];
+
+        title.textContent = slide.title;
+        copy.textContent = slide.copy;
+        before.textContent = slide.before;
+        during.textContent = slide.during;
+        after.textContent = slide.after;
+        promptText.textContent = slide.prompt;
+        output.textContent = slide.output;
+
+        options.forEach((item) => item.classList.remove("active"));
+        option.classList.add("active");
+      });
+    });
+  </script>
 </body>
 </html>
